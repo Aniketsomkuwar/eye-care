@@ -33,11 +33,11 @@ export default function HeroSection() {
         </svg>
       </motion.div>
 
-      {/* 1. Floating Header & Navigation */}
+      {/* 1. Header & Navigation */}
       <Navbar />
 
-      {/* 2. Main Hero Content Grid (with top padding for fixed navbar) */}
-      <div className="relative z-10 px-4 sm:px-12 lg:px-20 pt-24 sm:pt-28 lg:pt-32 pb-8 lg:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-1">
+      {/* 2. Main Hero Content Grid */}
+      <div className="relative z-10 px-4 sm:px-12 lg:px-20 pt-4 sm:pt-6 lg:pt-8 pb-8 lg:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-1">
 
         {/* Left Column (Headlines & CTA) */}
         <motion.div
