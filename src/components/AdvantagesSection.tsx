@@ -50,7 +50,7 @@ export default function AdvantagesSection() {
       >
         
         {/* Left Side: Vibrant Royal Blue Panel with Doctor & Floating Tags */}
-        <div className="lg:col-span-5 bg-[#1E5BF9] text-white p-8 sm:p-12 lg:p-14 relative flex flex-col justify-between overflow-hidden min-h-[520px] lg:min-h-[600px]">
+        <div className="lg:col-span-5 bg-[#1E5BF9] text-white p-8 sm:p-12 lg:p-14 pb-0 sm:pb-0 lg:pb-0 relative flex flex-col justify-between overflow-hidden min-h-[580px] lg:min-h-[680px]">
           
           {/* Subtle Ambient Radial Light */}
           <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
@@ -69,23 +69,24 @@ export default function AdvantagesSection() {
             </div>
           </div>
 
-          {/* Center/Bottom: Doctor Cutout & Floating Tags */}
-          <div className="relative z-10 mt-auto pt-8 flex justify-center items-end">
+          {/* Bottom Doctor Cutout & Floating Tags: Takes full presence anchored to bottom */}
+          <div className="relative z-10 mt-auto flex justify-center items-end self-end w-full">
             
             {/* Cutout Image of Dr. Ruchita */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-[280px] sm:w-[320px] lg:w-[340px]"
+              className="relative w-[340px] sm:w-[420px] lg:w-[460px] xl:w-[490px] max-w-full origin-bottom translate-y-1"
             >
               <Image
-                src="/images/dr-ruchita-actual-clean.png"
+                src="/images/dr-ruchita-inner-border.png"
                 alt="Dr. Ruchita Sontakke, Chief Eye Surgeon"
-                width={400}
-                height={550}
-                className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
+                width={560}
+                height={780}
+                priority
+                className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
               />
             </motion.div>
 
@@ -93,9 +94,9 @@ export default function AdvantagesSection() {
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-[-8px] top-[25%] pointer-events-auto"
+              className="absolute left-[-6px] sm:left-2 top-[35%] pointer-events-auto z-20"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 MAMC Pedigree
               </div>
@@ -105,9 +106,9 @@ export default function AdvantagesSection() {
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute left-[-12px] bottom-[25%] pointer-events-auto"
+              className="absolute left-[-10px] sm:left-0 bottom-[18%] pointer-events-auto z-20"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Certified Clinic
               </div>
@@ -117,9 +118,9 @@ export default function AdvantagesSection() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute right-[-10px] bottom-[35%] pointer-events-auto"
+              className="absolute right-[-6px] sm:right-2 top-[48%] pointer-events-auto z-20"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Modern Equipment
               </div>

@@ -202,18 +202,19 @@ export default function AppointmentSection() {
 
           {/* Cutout Image of Doctor */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 w-[280px] sm:w-[340px] lg:w-[380px]"
+            className="relative z-10 w-[320px] sm:w-[380px] lg:w-[420px] max-w-full origin-bottom translate-y-1"
           >
             <Image
-              src="/images/dr-ruchita-actual-clean.png"
+              src="/images/dr-ruchita-inner-border.png"
               alt="Dr. Ruchita Sontakke, Eye Surgeon"
-              width={450}
-              height={600}
-              className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              width={560}
+              height={780}
+              priority
+              className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
             />
           </motion.div>
 
