@@ -185,65 +185,70 @@ export default function AppointmentSection() {
 
         </div>
 
-        {/* Right Side: Royal Blue Panel with Doctor & Floating Tags */}
-        <div className="lg:col-span-5 bg-[#1E5BF9] relative flex flex-col justify-end items-center overflow-hidden min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
+        {/* Right Side: Bespoke Clinical Consultation Suite & OPD Assurance Stage */}
+        <div className="lg:col-span-5 relative flex flex-col justify-between overflow-hidden min-h-[440px] sm:min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-12 text-white">
 
-          {/* Subtle Ambient Light */}
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-blue-400/30 blur-3xl pointer-events-none" />
+          {/* Authentic Clinic Consultation Photo Background */}
+          <Image
+            src="/images/clinic-consultation.jpg"
+            alt="Dr. Ruchita Sontakke in clinic consultation at Jyoti Eye Care"
+            fill
+            sizes="(max-width: 1024px) 100vw, 42vw"
+            className="object-cover object-center"
+          />
+          {/* Deep Navy/Blue Atmospheric Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070E20] via-[#070E20]/80 to-[#1E5BF9]/40" />
 
-          {/* Cutout Image of Doctor */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10 w-[280px] sm:w-[380px] lg:w-[420px] max-w-full origin-bottom translate-y-1"
-          >
-            <Image
-              src="/images/dr-ruchita-inner-border.png"
-              alt="Dr. Ruchita Sontakke, Eye Surgeon"
-              width={560}
-              height={780}
-              priority
-              className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
-            />
-          </motion.div>
+          {/* Top Stage Capsule */}
+          <div className="relative z-10 flex items-center justify-between gap-3">
+            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-wide uppercase text-white border border-white/30 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Evening OPD Active
+            </span>
+            <span className="text-[11px] font-semibold text-white/80 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+              Gopal Nagar, Nagpur
+            </span>
+          </div>
 
-          {/* Floating Tag 1: • EXPERIENCED DOCTORS */}
-          <motion.div
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-3 sm:left-6 top-[32%] z-20 pointer-events-auto"
-          >
-            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-              Experienced Doctors
+          {/* Center Stage: What to Expect Feature Box */}
+          <div className="relative z-10 my-auto py-6">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white tracking-tight leading-snug">
+              Direct consultation with Dr. Ruchita Sontakke
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-200 mt-2.5 leading-relaxed font-normal">
+              Every consultation includes comprehensive anterior segment examination, high-magnification slit-lamp biomicroscopy, and honest surgical guidance.
+            </p>
+
+            {/* Quick Consultation Assurances */}
+            <div className="mt-5 space-y-2.5">
+              <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium bg-white/10 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/15">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Thorough 30-min evaluation — never a rushed 2-minute visit</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium bg-white/10 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/15">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Direct senior surgeon evaluation (MAMC New Delhi pedigree)</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-white/95 font-medium bg-white/10 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/15">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Instant confirmation to WhatsApp &amp; priority scheduling</span>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Floating Tag 2: • CERTIFIED CLINIC */}
-          <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute right-3 sm:right-6 top-[20%] z-20 pointer-events-auto"
-          >
-            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-              Certified Clinic
+          {/* Bottom OPD Timings Pill */}
+          <div className="relative z-10 pt-4 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div>
+              <span className="text-slate-300 block text-[10px] uppercase font-semibold tracking-wider">Consultation Schedule</span>
+              <span className="text-white font-bold text-sm">Mon - Sat: 6:30 PM - 9:30 PM</span>
             </div>
-          </motion.div>
-
-          {/* Floating Tag 3: • MODERN EQUIPMENT */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-            className="absolute right-3 sm:right-8 bottom-[18%] z-20 pointer-events-auto"
-          >
-            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-              Modern Equipment
-            </div>
-          </motion.div>
+            <a
+              href="tel:+918830383320"
+              className="inline-flex items-center gap-1.5 bg-white text-[#1E5BF9] hover:bg-blue-50 px-3.5 py-2 rounded-full font-bold text-xs shadow-md transition-transform hover:scale-105"
+            >
+              <span>Call Helpline</span>
+            </a>
+          </div>
 
         </div>
 

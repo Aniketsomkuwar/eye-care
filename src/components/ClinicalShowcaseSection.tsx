@@ -71,18 +71,11 @@ export default function ClinicalShowcaseSection() {
         className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16"
       >
         <div>
-          <div className="flex items-center gap-3 text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] mb-4">
-            <span className="w-8 h-[1px] bg-slate-200" aria-hidden="true" />
-            <span>REAL CLINICAL EVIDENCE</span>
-            <span className="w-8 h-[1px] bg-slate-200" aria-hidden="true" />
-          </div>
-
           <div className="flex flex-wrap items-baseline gap-3">
             <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight leading-tight">
               Surgical excellence
               <br className="hidden sm:inline" /> in action
             </h2>
-
           </div>
         </div>
 

@@ -62,7 +62,7 @@ const testimonials: Testimonial[] = [
     image: "/images/case-eyelid-tumor-before-after.jpg",
     quote:
       "I had a painful, growing growth on my upper eyelid that blocked my sight. Dr. Ruchita performed the delicate surgery with precision. The eyelid healed cleanly with zero visible scarring.",
-    avatarColor: "from-purple-500 to-indigo-600",
+    avatarColor: "from-blue-600 to-slate-800",
     initials: "NM",
   },
 ];

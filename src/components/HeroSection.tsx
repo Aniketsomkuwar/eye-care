@@ -78,7 +78,7 @@ export default function HeroSection() {
           >
             <Link
               href="#book-appointment"
-              className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1E5BF9] to-[#3B82F6] hover:from-[#184FD8] hover:to-[#2563EB] text-white font-semibold pl-6 sm:pl-7 pr-2.5 py-2.5 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.32)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1E5BF9] to-[#3B82F6] hover:from-[#184FD8] hover:to-[#2563EB] text-white font-semibold pl-6 sm:pl-7 pr-2.5 py-2.5 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.32)] transition-[background-color,transform,box-shadow] transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <span className="text-sm sm:text-base font-semibold">Find Doctor</span>
               <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform">

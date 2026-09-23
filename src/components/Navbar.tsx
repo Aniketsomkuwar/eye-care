@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, Bell, User, MapPin, Menu, X, Eye } from "lucide-react";
+import { Phone, Menu, X, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
@@ -66,9 +66,6 @@ export default function Navbar() {
       {/* Right Action Icons (Over Blue Swoop on Desktop) */}
       <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <div className="hidden xl:flex flex-col items-end text-white text-right leading-tight mr-1">
-          <span className="text-[10px] font-bold tracking-widest text-blue-100 uppercase flex items-center gap-1">
-            <MapPin className="w-3 h-3 text-white inline" /> Gopal Nagar, Nagpur
-          </span>
           <span className="text-[10px] text-white/80 font-medium">Mon - Sat: 6:30 PM - 9:30 PM</span>
         </div>
 

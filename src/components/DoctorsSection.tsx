@@ -36,34 +36,40 @@ const team: DoctorMember[] = [
 export default function DoctorsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const scrollToDoctor = (index: number) => {
+    setActiveIndex(index);
+    if (typeof window !== "undefined") {
+      const el = document.getElementById(`doctor-card-${index}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }
+  };
+
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % team.length);
+    const next = (activeIndex + 1) % team.length;
+    scrollToDoctor(next);
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + team.length) % team.length);
+    const prev = (activeIndex - 1 + team.length) % team.length;
+    scrollToDoctor(prev);
   };
 
   return (
     <section id="doctor" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
 
-      {/* Top Brand Divider & Appointment Pill (Matches haidigi.com) */}
+      {/* Top Appointment Pill */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center justify-center mb-12 sm:mb-16"
+        className="flex flex-col items-center justify-center mb-10 sm:mb-14"
       >
-        <div className="flex items-center gap-3 text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] mb-4">
-          <span className="w-8 h-[1px] bg-slate-200" aria-hidden="true" />
-          <span>JYOTI EYE CARE</span>
-          <span className="w-8 h-[1px] bg-slate-200" aria-hidden="true" />
-        </div>
-
         <Link
           href="#book-appointment"
-          className="group inline-flex items-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-sm font-semibold pl-6 pr-2 py-2 rounded-full shadow-[0_8px_25px_rgba(30,91,249,0.32)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+          className="group inline-flex items-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-sm font-semibold pl-6 pr-2 py-2 rounded-full shadow-[0_8px_25px_rgba(30,91,249,0.32)] transition-[background-color,transform,box-shadow] transform hover:-translate-y-0.5 active:translate-y-0"
         >
           <span>Make an appointment</span>
           <span className="w-8 h-8 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
@@ -99,7 +105,6 @@ export default function DoctorsSection() {
                 <br />
                 who care
               </h2>
-
             </div>
 
             {/* Subtext */}
@@ -130,7 +135,7 @@ export default function DoctorsSection() {
               {team.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setActiveIndex(idx)}
+                  onClick={() => scrollToDoctor(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex
                       ? "w-6 bg-[#1E5BF9]"
@@ -148,6 +153,7 @@ export default function DoctorsSection() {
           {team.map((member, index) => (
             <motion.div
               key={member.name}
+              id={`doctor-card-${index}`}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
