@@ -48,7 +48,7 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="relative px-4 sm:px-8 lg:px-12 py-16 sm:py-24 w-full max-w-[1600px] mx-auto overflow-hidden">
-      
+
       {/* Giant Faint Watermark Text in Background (Matches haidigi.com) */}
       <div className="absolute inset-0 flex items-center justify-between pointer-events-none select-none z-0 px-2 sm:px-8 opacity-35">
         <span className="text-6xl sm:text-8xl lg:text-[11rem] font-extrabold font-heading text-blue-100 tracking-tighter">
@@ -88,10 +88,6 @@ export default function FaqSection() {
             </Link>
           </div>
 
-          <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200 shadow-sm text-xs font-semibold text-slate-700">
-            <span className="w-2 h-2 rounded-full bg-[#1E5BF9]" />
-            <span>&#123; FAQ &#125;</span>
-          </div>
         </div>
       </motion.div>
 
@@ -103,13 +99,13 @@ export default function FaqSection() {
         transition={{ duration: 0.7 }}
         className="relative z-10 max-w-xl mx-auto"
       >
-        
+
         {/* Layered Drop Shadow */}
         <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/8 rounded-[36px] sm:rounded-[44px] rotate-1 transform scale-98 pointer-events-none" />
 
         {/* Main Card */}
         <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.12)] min-h-[320px] flex flex-col justify-between transition-all">
-          
+
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -141,11 +137,10 @@ export default function FaqSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to question ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === currentIndex
+                  className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

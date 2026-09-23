@@ -61,7 +61,7 @@ const showcaseItems: ShowcaseItem[] = [
 export default function ClinicalShowcaseSection() {
   return (
     <section className="px-4 sm:px-8 lg:px-12 my-12 sm:my-24 w-full max-w-[1600px] mx-auto">
-      
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
@@ -82,9 +82,7 @@ export default function ClinicalShowcaseSection() {
               Surgical excellence
               <br className="hidden sm:inline" /> in action
             </h2>
-            <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full border border-slate-200/60 self-start mt-2">
-              &#123; Real practice &#125;
-            </span>
+
           </div>
         </div>
 
@@ -117,7 +115,7 @@ export default function ClinicalShowcaseSection() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                
+
                 {/* Floating Category Pill */}
                 <div className="absolute top-5 left-5 z-10">
                   <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[11px] font-bold text-slate-900 uppercase tracking-wide shadow-md border border-slate-100">
@@ -128,9 +126,9 @@ export default function ClinicalShowcaseSection() {
               </div>
 
               {/* Text Content */}
-              <div className="p-6 sm:p-8 bg-white flex flex-col justify-between flex-1">
+              <div className="p-5 sm:p-8 bg-white flex flex-col justify-between flex-1">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-heading tracking-tight leading-snug group-hover:text-[#1E5BF9] transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-bold text-slate-900 font-heading tracking-tight leading-snug group-hover:text-[#1E5BF9] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 mt-2.5 leading-relaxed font-normal">
@@ -138,11 +136,11 @@ export default function ClinicalShowcaseSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
-                  <span className="text-slate-400">Jyoti Eye Care Clinical Archive</span>
+                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs font-semibold">
+                  <span className="text-slate-400 text-[11px] sm:text-xs">Jyoti Eye Care Clinical Archive</span>
                   <Link
                     href="#book-appointment"
-                    className="inline-flex items-center gap-1 text-[#1E5BF9] hover:text-[#1647C9] group/link transition-colors"
+                    className="inline-flex items-center gap-1 text-[#1E5BF9] hover:text-[#1647C9] group/link transition-colors self-start sm:self-auto"
                   >
                     <span>Consult Dr. Ruchita</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

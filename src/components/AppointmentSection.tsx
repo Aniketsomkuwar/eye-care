@@ -41,20 +41,11 @@ export default function AppointmentSection() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] grid grid-cols-1 lg:grid-cols-12"
       >
-        
+
         {/* Left Side: Booking Form */}
-        <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between">
-          
+        <div className="lg:col-span-7 p-6 sm:p-12 lg:p-16 flex flex-col justify-between">
+
           <div>
-            {/* Top Pill & Brand Label */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-semibold text-slate-600 bg-slate-100 px-3.5 py-1.5 rounded-full border border-slate-200/60">
-                &#123; Book your visit &#125;
-              </span>
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                JYOTI EYE CARE CLINIC
-              </span>
-            </div>
 
             {/* Title */}
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.12] mb-8">
@@ -167,18 +158,18 @@ export default function AppointmentSection() {
                 </div>
 
                 {/* Submit Row: Button + Guarantee Text */}
-                <div className="pt-4 flex flex-wrap items-center gap-5">
+                <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="inline-flex items-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white font-bold text-sm px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.35)] transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white font-bold text-sm px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.35)] transition-colors cursor-pointer w-full sm:w-auto"
                   >
                     <span>BOOK NOW</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.button>
 
-                  <span className="text-xs text-slate-500 font-medium">
+                  <span className="text-xs text-slate-500 font-medium text-center sm:text-left">
                     Guaranteed response within <strong className="text-slate-900 font-bold">15 minutes</strong>
                   </span>
                 </div>
@@ -195,8 +186,8 @@ export default function AppointmentSection() {
         </div>
 
         {/* Right Side: Royal Blue Panel with Doctor & Floating Tags */}
-        <div className="lg:col-span-5 bg-[#1E5BF9] relative flex flex-col justify-end items-center overflow-hidden min-h-[460px] lg:min-h-[560px]">
-          
+        <div className="lg:col-span-5 bg-[#1E5BF9] relative flex flex-col justify-end items-center overflow-hidden min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
+
           {/* Subtle Ambient Light */}
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-blue-400/30 blur-3xl pointer-events-none" />
 
@@ -206,7 +197,7 @@ export default function AppointmentSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 w-[320px] sm:w-[380px] lg:w-[420px] max-w-full origin-bottom translate-y-1"
+            className="relative z-10 w-[280px] sm:w-[380px] lg:w-[420px] max-w-full origin-bottom translate-y-1"
           >
             <Image
               src="/images/dr-ruchita-inner-border.png"
@@ -222,9 +213,9 @@ export default function AppointmentSection() {
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-6 top-[32%] z-20 pointer-events-auto"
+            className="absolute left-3 sm:left-6 top-[32%] z-20 pointer-events-auto"
           >
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Experienced Doctors
             </div>
@@ -234,9 +225,9 @@ export default function AppointmentSection() {
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute right-6 top-[20%] z-20 pointer-events-auto"
+            className="absolute right-3 sm:right-6 top-[20%] z-20 pointer-events-auto"
           >
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Certified Clinic
             </div>
@@ -246,9 +237,9 @@ export default function AppointmentSection() {
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-            className="absolute right-8 bottom-[20%] z-20 pointer-events-auto"
+            className="absolute right-3 sm:right-8 bottom-[18%] z-20 pointer-events-auto"
           >
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+            <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Modern Equipment
             </div>

@@ -46,7 +46,7 @@ export default function DoctorsSection() {
 
   return (
     <section id="doctor" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
-      
+
       {/* Top Brand Divider & Appointment Pill (Matches haidigi.com) */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function DoctorsSection() {
 
       {/* Main Grid: Left Description & Controls + Right 3 Doctor Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
+
         {/* Left Column: Heading, Subtext & Controls */}
         <motion.div
           initial={{ opacity: 0, x: -25 }}
@@ -99,9 +99,7 @@ export default function DoctorsSection() {
                 <br />
                 who care
               </h2>
-              <span className="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1 rounded-full border border-slate-200/60 self-start mt-2">
-                &#123; Our doctors &#125;
-              </span>
+
             </div>
 
             {/* Subtext */}
@@ -134,11 +132,10 @@ export default function DoctorsSection() {
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === activeIndex
+                  className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -156,11 +153,10 @@ export default function DoctorsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className={`group relative rounded-[28px] sm:rounded-[34px] overflow-hidden bg-white border transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(30,91,249,0.08)] ${
-                index === activeIndex
+              className={`group relative rounded-[28px] sm:rounded-[34px] overflow-hidden bg-white border transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(30,91,249,0.08)] ${index === activeIndex
                   ? "border-[#1E5BF9]/50 ring-2 ring-[#1E5BF9]/20"
                   : "border-slate-200/80 hover:border-slate-300"
-              }`}
+                }`}
             >
               {/* Doctor Image Container */}
               <div className="relative w-full h-[320px] sm:h-[350px] overflow-hidden bg-gradient-to-b from-slate-50 to-slate-100">
@@ -172,7 +168,7 @@ export default function DoctorsSection() {
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                
+
                 {/* Details Overlay at Bottom of Photo */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="text-lg font-bold font-heading leading-tight drop-shadow-sm">

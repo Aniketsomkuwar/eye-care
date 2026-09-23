@@ -1,0 +1,5 @@
+navbar should be floating so even if i scroll down navbar should be visible in desktop view
+navbar should be animated , like if i hover on navbar item,it should feel something 
+remove emojis from entire website
+
+

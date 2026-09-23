@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
 
   return (
     <section id="patient-reviews" className="relative px-4 sm:px-8 lg:px-12 py-16 sm:py-24 w-full max-w-[1600px] mx-auto overflow-hidden">
-      
+
       {/* Giant Faint Watermark Text in Background (Matches haidigi.com) */}
       <div className="absolute inset-0 flex items-center justify-between pointer-events-none select-none z-0 px-2 sm:px-8 opacity-40">
         <span className="text-6xl sm:text-8xl lg:text-[11rem] font-extrabold font-heading text-blue-100 tracking-tighter">
@@ -105,10 +105,7 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200 shadow-sm text-xs font-semibold text-slate-700">
-          <span className="w-2 h-2 rounded-full bg-[#1E5BF9]" />
-          <span>&#123; REVIEW &#125;</span>
-        </div>
+
       </motion.div>
 
       {/* 3D Floating Review Card (Matches haidigi.com) */}
@@ -119,13 +116,13 @@ export default function TestimonialsSection() {
         transition={{ duration: 0.7 }}
         className="relative z-10 max-w-xl mx-auto"
       >
-        
+
         {/* Layered Card Drop Shadow (haidigi perspective effect) */}
         <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/10 rounded-[36px] sm:rounded-[44px] -rotate-1 transform scale-98 pointer-events-none" />
 
         {/* Main Card */}
-        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col justify-between transition-all min-h-[580px]">
-          
+        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-5 sm:p-10 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col justify-between transition-all min-h-[540px] sm:min-h-[580px]">
+
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -136,32 +133,34 @@ export default function TestimonialsSection() {
               className="flex-1 flex flex-col justify-between"
             >
               {/* Card Top: Patient Info & Rating */}
-              <div className="flex items-center justify-between mb-5">
+              <div className="flex items-start sm:items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-11 h-11 rounded-full bg-gradient-to-tr ${current.avatarColor} text-white font-bold flex items-center justify-center text-sm shadow-sm`}
+                    className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr ${current.avatarColor} text-white font-bold flex items-center justify-center text-xs sm:text-sm shadow-sm flex-shrink-0`}
                   >
                     {current.initials}
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 font-heading leading-tight">
+                    <h3 className="text-sm sm:text-lg font-bold text-slate-900 font-heading leading-tight">
                       {current.name}
                     </h3>
-                    <div className="flex items-center gap-1 mt-0.5">
-                      {[...Array(current.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                        />
-                      ))}
-                      <span className="text-[11px] text-slate-400 font-medium ml-1">
+                    <div className="flex flex-wrap items-center gap-1 mt-0.5">
+                      <div className="flex items-center">
+                        {[...Array(current.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400 text-amber-400"
+                          />
+                        ))}
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] text-slate-400 font-medium ml-1">
                         {current.location}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <span className="text-xs font-medium text-slate-400 tabular-nums">
+                <span className="text-[10px] sm:text-xs font-medium text-slate-400 tabular-nums flex-shrink-0">
                   {current.date}
                 </span>
               </div>
@@ -204,11 +203,10 @@ export default function TestimonialsSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to review ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === currentIndex
+                  className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

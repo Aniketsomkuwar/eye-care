@@ -75,7 +75,7 @@ const cardVariants: Variants = {
 export default function ServicesSection() {
   return (
     <section id="services" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
-      
+
       {/* Section Header (Matches haidigi.com) */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
@@ -91,9 +91,7 @@ export default function ServicesSection() {
               Our medical
               <br className="hidden sm:inline" /> services
             </h2>
-            <span className="self-end mb-2 text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200/60">
-              &#123; What you get &#125;
-            </span>
+
           </div>
         </div>
 
@@ -120,7 +118,7 @@ export default function ServicesSection() {
         viewport={{ once: true, margin: "-60px" }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
       >
-        
+
         {/* Top 4 Cards (01 to 04) */}
         {services.slice(0, 4).map((service) => (
           <motion.div
@@ -216,15 +214,15 @@ export default function ServicesSection() {
             className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/25 to-transparent" />
-          
+
           {/* Floating Pill Badge (Matches haidigi.com) */}
-          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-            <span className="bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-900 shadow-lg border border-slate-100">
-              Dr. Ruchita in Surgical OT • Advanced Microsurgery
+          <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between gap-2">
+            <span className="bg-white/95 backdrop-blur-md px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-sm font-semibold text-slate-900 shadow-lg border border-slate-100 truncate max-w-[220px] sm:max-w-none">
+              Dr. Ruchita in Surgical OT • Microsurgery
             </span>
             <Link
               href="#doctor"
-              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-[#1E5BF9] flex items-center justify-center transition-all shadow-md hover:scale-110"
+              className="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-[#1E5BF9] flex items-center justify-center transition-all shadow-md hover:scale-110"
               aria-label="Meet Dr. Ruchita Sontakke"
             >
               <ArrowRight className="w-4 h-4" />
