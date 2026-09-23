@@ -17,7 +17,7 @@ const team: DoctorMember[] = [
     name: "Dr. Ruchita Sontakke",
     role: "Chief Cataract & Oculoplastic Surgeon",
     credentials: "MBBS (IGGMC) • MS (MAMC Delhi) • DNB • Ex-SR MAMC",
-    image: "/images/dr-ruchita-actual.png",
+    image: "/images/dr-ruchita-flowers.jpg",
   },
   {
     name: "Dr. Arjun Sharma",

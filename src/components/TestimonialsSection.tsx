@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     date: "18.08.2026",
     rating: 5,
     treatment: "Micro-Incision Cataract Surgery (Foldable IOL)",
-    image: "/images/clinic-consultation.jpg",
+    image: "/images/doctor-ot-phaco.jpg",
     quote:
       "The precision and surgical technology here are outstanding. My cataract recovery was so smooth and I was back to clear vision within 24 hours. Dr. Ruchita explained every single step with such reassuring care.",
     avatarColor: "from-blue-500 to-indigo-600",
@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
     date: "24.07.2026",
     rating: 5,
     treatment: "Functional Ptosis & Eyelid Reconstruction",
-    image: "/images/clinic-consultation.jpg",
+    image: "/images/case-ptosis-before-after.jpg",
     quote:
       "My drooping eyelid was obstructing my upper vision for two years. Dr. Ruchita's MAMC surgical pedigree really shows. The symmetry is immaculate and the delicate incision healed with zero noticeable mark.",
     avatarColor: "from-rose-500 to-pink-600",
@@ -47,11 +47,23 @@ const testimonials: Testimonial[] = [
     date: "04.09.2026",
     rating: 5,
     treatment: "Computer Vision Syndrome & Dry Eye Therapy",
-    image: "/images/clinic-consultation.jpg",
+    image: "/images/clinic-room.jpg",
     quote:
       "Best ophthalmic diagnostic exam in Nagpur. No rushed two-minute visit; Dr. Ruchita spent 30 minutes evaluating my tear film breakup time and explained screen ergonomics and lubricating protocols thoroughly.",
     avatarColor: "from-emerald-500 to-teal-600",
     initials: "KM",
+  },
+  {
+    name: "Nandkishor Meshram",
+    location: "Gopal Nagar, Nagpur",
+    date: "12.09.2026",
+    rating: 5,
+    treatment: "Eyelid Lesion Excision & Reconstruction",
+    image: "/images/case-eyelid-tumor-before-after.jpg",
+    quote:
+      "I had a painful, growing growth on my upper eyelid that blocked my sight. Dr. Ruchita performed the delicate surgery with precision. The eyelid healed cleanly with zero visible scarring.",
+    avatarColor: "from-purple-500 to-indigo-600",
+    initials: "NM",
   },
 ];
 

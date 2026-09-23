@@ -4,6 +4,7 @@ import MissionSection from "@/components/MissionSection";
 import ServicesSection from "@/components/ServicesSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import DoctorsSection from "@/components/DoctorsSection";
+import ClinicalShowcaseSection from "@/components/ClinicalShowcaseSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AppointmentSection from "@/components/AppointmentSection";
 import FaqSection from "@/components/FaqSection";
@@ -31,6 +32,9 @@ export default function Home() {
 
       {/* Section 5: Meet The Doctors / Clinical Team */}
       <DoctorsSection />
+
+      {/* Section 6: Real Clinical Evidence & Surgery Showcase */}
+      <ClinicalShowcaseSection />
 
       {/* Section 7: Patient Reviews & Testimonials */}
       <TestimonialsSection />

@@ -101,8 +101,8 @@ export default function HeroSection() {
                 className="relative w-32 sm:w-36 h-22 rounded-2xl overflow-hidden group cursor-pointer flex-shrink-0 shadow-sm block"
               >
                 <Image
-                  src="/images/clinic-consultation.jpg"
-                  alt="Jyoti Eye Care In-Clinic Consultation"
+                  src="/images/clinic-room.jpg"
+                  alt="Jyoti Eye Care In-Clinic Diagnostic Suite"
                   width={150}
                   height={100}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -112,7 +112,7 @@ export default function HeroSection() {
                   <Play className="w-3.5 h-3.5 fill-[#1E5BF9] ml-0.5" />
                 </div>
                 <span className="absolute bottom-1.5 left-2 bg-slate-950/70 backdrop-blur-sm text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  Virtual tour
+                  Clinic Tour
                 </span>
               </a>
 

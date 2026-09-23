@@ -209,18 +209,18 @@ export default function ServicesSection() {
           className="sm:col-span-2 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[260px] shadow-[0_10px_35px_rgba(0,0,0,0.06)] group border border-slate-200/80"
         >
           <Image
-            src="/images/clinic-consultation.jpg"
-            alt="Dr. Ruchita Sontakke in clinic consultation at Jyoti Eye Care"
+            src="/images/doctor-ot-surgery.jpg"
+            alt="Dr. Ruchita Sontakke performing microsurgery in the operating theatre"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/25 to-transparent" />
           
           {/* Floating Pill Badge (Matches haidigi.com) */}
           <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
             <span className="bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-900 shadow-lg border border-slate-100">
-              Dr. Ruchita is here for your vision
+              Dr. Ruchita in Surgical OT • Advanced Microsurgery
             </span>
             <Link
               href="#doctor"
