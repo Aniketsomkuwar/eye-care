@@ -12,18 +12,18 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-30 pt-6 px-6 sm:px-12 lg:px-20 flex items-center justify-between w-full"
+      className="relative z-30 pt-4 sm:pt-6 px-4 sm:px-12 lg:px-20 flex items-center justify-between w-full"
     >
       {/* Brand Logo */}
-      <Link href="/" className="flex items-center gap-3 group">
-        <div className="w-10 h-10 rounded-full bg-[#1E5BF9] flex items-center justify-center shadow-[0_4px_16px_rgba(30,91,249,0.35)] group-hover:scale-105 transition-transform">
-          <Eye className="w-5 h-5 text-white" />
+      <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1E5BF9] flex items-center justify-center shadow-[0_4px_16px_rgba(30,91,249,0.35)] group-hover:scale-105 transition-transform">
+          <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </div>
         <div className="flex flex-col">
-          <span className="font-extrabold text-xl tracking-tight text-slate-950 font-heading">
+          <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-950 font-heading leading-tight">
             Jyoti<span className="text-[#1E5BF9]">Eye</span>Care
           </span>
-          <span className="text-[10px] font-semibold text-slate-500 tracking-wider uppercase">
+          <span className="text-[9px] sm:text-[10px] font-semibold text-slate-500 tracking-wider uppercase">
             Dr. Ruchita Sontakke
           </span>
         </div>
@@ -63,8 +63,8 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      {/* Right Action Icons (Over Blue Swoop) */}
-      <div className="flex items-center gap-3">
+      {/* Right Action Icons (Over Blue Swoop on Desktop) */}
+      <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <div className="hidden xl:flex flex-col items-end text-white text-right leading-tight mr-1">
           <span className="text-[10px] font-bold tracking-widest text-blue-100 uppercase flex items-center gap-1">
             <MapPin className="w-3 h-3 text-white inline" /> Gopal Nagar, Nagpur
@@ -72,27 +72,30 @@ export default function Navbar() {
           <span className="text-[10px] text-white/80 font-medium">Mon - Sat: 6:30 PM - 9:30 PM</span>
         </div>
 
+        {/* Call button: visible on all screens */}
         <a
           href="tel:+918830383320"
           title="Call Clinic Desk: +91 88303 83320"
-          className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm hover:scale-105 active:scale-95"
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1E5BF9] sm:bg-white/15 hover:bg-[#1647C9] sm:hover:bg-white/25 border border-transparent sm:border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm hover:scale-105 active:scale-95"
         >
           <Phone className="w-4 h-4 fill-white" />
         </a>
 
+        {/* Bell button: visible on tablet/desktop */}
         <a
           href="#opd-schedule"
           title="Evening OPD: 6:30 PM - 9:30 PM"
-          className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm relative hover:scale-105 active:scale-95"
+          className="hidden sm:flex w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm relative hover:scale-105 active:scale-95"
         >
           <Bell className="w-4 h-4" />
           <span className="w-2.5 h-2.5 rounded-full bg-amber-400 absolute top-2 right-2 border-2 border-[#1E5BF9]" />
         </a>
 
+        {/* Profile button: visible on tablet/desktop */}
         <a
           href="#book-appointment"
           title="Consultation Profile"
-          className="w-10 h-10 rounded-full bg-[#0A1128] hover:bg-[#15234D] flex items-center justify-center text-white transition-all shadow-md hover:scale-105 active:scale-95"
+          className="hidden sm:flex w-10 h-10 rounded-full bg-[#0A1128] hover:bg-[#15234D] items-center justify-center text-white transition-all shadow-md hover:scale-105 active:scale-95"
         >
           <User className="w-4 h-4" />
         </a>
@@ -100,10 +103,10 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-800 ml-1"
+          className="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-800 border border-slate-100"
           aria-label="Toggle Navigation"
         >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
         </button>
       </div>
 

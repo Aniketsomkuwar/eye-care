@@ -91,17 +91,17 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Center Column: Cutout of Dr. Ruchita Sontakke & Interactive Floating Badges */}
-        <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[420px] sm:h-[540px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
+        <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[380px] sm:h-[540px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
 
           {/* Soft luminous aura backdrop on mobile to anchor portrait */}
-          <div className="absolute inset-x-6 bottom-0 top-12 bg-gradient-to-t from-blue-600/15 via-blue-500/5 to-transparent rounded-t-[48px] pointer-events-none lg:hidden" />
+          <div className="absolute inset-x-6 bottom-0 top-10 bg-gradient-to-t from-blue-600/15 via-blue-500/5 to-transparent rounded-t-[40px] pointer-events-none lg:hidden" />
 
           {/* Cutout Image of Doctor with entrance animation */}
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1.05 }}
             transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-[300px] sm:w-[420px] lg:w-[500px] xl:w-[560px] max-w-full origin-bottom translate-y-1 sm:translate-y-2"
+            className="relative z-10 w-[280px] sm:w-[420px] lg:w-[500px] xl:w-[560px] max-w-full origin-bottom translate-y-1 sm:translate-y-2"
           >
             <Image
               src="/images/dr-ruchita-inner-border.png"
@@ -118,14 +118,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute left-1 sm:left-4 top-[54%] z-20 pointer-events-auto"
+            className="absolute left-2 sm:left-4 top-[54%] z-20 pointer-events-auto"
           >
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="relative flex items-center"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-[11px] sm:text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Reliability
               </div>
@@ -138,14 +138,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="absolute right-1 sm:right-6 top-[28%] z-20 pointer-events-auto"
+            className="absolute right-2 sm:right-6 top-[28%] z-20 pointer-events-auto"
           >
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="relative flex items-center flex-row-reverse"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-[11px] sm:text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Experience
               </div>
@@ -158,14 +158,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="absolute right-1 sm:right-2 top-[68%] z-20 pointer-events-auto"
+            className="absolute right-2 sm:right-2 top-[68%] z-20 pointer-events-auto"
           >
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="relative flex items-center flex-row-reverse"
             >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-[11px] sm:text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Professional
               </div>
