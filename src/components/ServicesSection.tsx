@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ServiceItem {
   number: string;
@@ -52,12 +53,37 @@ const services: ServiceItem[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function ServicesSection() {
   return (
     <section id="services" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
       
       {/* Section Header (Matches haidigi.com) */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14"
+      >
         {/* Left: Heading with Pill Badge */}
         <div>
           <div className="flex items-center gap-3">
@@ -84,15 +110,23 @@ export default function ServicesSection() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </div>
+      </motion.div>
 
       {/* Services Grid (Matches haidigi.com 4-column + wide card layout) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-60px" }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
+      >
         
         {/* Top 4 Cards (01 to 04) */}
         {services.slice(0, 4).map((service) => (
-          <div
+          <motion.div
             key={service.number}
+            variants={cardVariants}
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
             className="group relative bg-white hover:bg-[#FAFBFD] rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 border border-slate-200/70 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.06)] transition-all flex flex-col justify-between min-h-[260px]"
           >
             {/* Top Number & Optional Badge */}
@@ -127,13 +161,15 @@ export default function ServicesSection() {
               </Link>
               <span className="text-slate-400 font-medium">In-Clinic</span>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {/* Bottom Row: Card 05, Card 06, and Span-2 Featured Banner */}
         {services.slice(4, 6).map((service) => (
-          <div
+          <motion.div
             key={service.number}
+            variants={cardVariants}
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
             className="group relative bg-white hover:bg-[#FAFBFD] rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 border border-slate-200/70 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.06)] transition-all flex flex-col justify-between min-h-[260px]"
           >
             {/* Top Number */}
@@ -163,11 +199,15 @@ export default function ServicesSection() {
               </Link>
               <span className="text-slate-400 font-medium">In-Clinic</span>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {/* Featured Wide Photo Card (Spans 2 columns on desktop) */}
-        <div className="sm:col-span-2 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[260px] shadow-[0_10px_35px_rgba(0,0,0,0.06)] group border border-slate-200/80">
+        <motion.div
+          variants={cardVariants}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="sm:col-span-2 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[260px] shadow-[0_10px_35px_rgba(0,0,0,0.06)] group border border-slate-200/80"
+        >
           <Image
             src="/images/clinic-consultation.jpg"
             alt="Dr. Ruchita Sontakke in clinic consultation at Jyoti Eye Care"
@@ -184,15 +224,15 @@ export default function ServicesSection() {
             </span>
             <Link
               href="#doctor"
-              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-[#1E5BF9] flex items-center justify-center transition-all shadow-md"
+              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-[#1E5BF9] flex items-center justify-center transition-all shadow-md hover:scale-110"
               aria-label="Meet Dr. Ruchita Sontakke"
             >
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

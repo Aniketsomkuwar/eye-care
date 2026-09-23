@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Star, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
   name: string;
@@ -77,7 +78,13 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Header Bar */}
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-12 sm:mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-12 sm:mb-16"
+      >
         <div>
           <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight">
             What our
@@ -90,70 +97,87 @@ export default function TestimonialsSection() {
           <span className="w-2 h-2 rounded-full bg-[#1E5BF9]" />
           <span>&#123; REVIEW &#125;</span>
         </div>
-      </div>
+      </motion.div>
 
       {/* 3D Floating Review Card (Matches haidigi.com) */}
-      <div className="relative z-10 max-w-xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="relative z-10 max-w-xl mx-auto"
+      >
         
         {/* Layered Card Drop Shadow (haidigi perspective effect) */}
         <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/10 rounded-[36px] sm:rounded-[44px] -rotate-1 transform scale-98 pointer-events-none" />
 
         {/* Main Card */}
-        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col justify-between transition-all">
+        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col justify-between transition-all min-h-[580px]">
           
-          {/* Card Top: Patient Info & Rating */}
-          <div className="flex items-center justify-between mb-5">
-            <div className="flex items-center gap-3">
-              <div
-                className={`w-11 h-11 rounded-full bg-gradient-to-tr ${current.avatarColor} text-white font-bold flex items-center justify-center text-sm shadow-sm`}
-              >
-                {current.initials}
-              </div>
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 font-heading leading-tight">
-                  {current.name}
-                </h3>
-                <div className="flex items-center gap-1 mt-0.5">
-                  {[...Array(current.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                    />
-                  ))}
-                  <span className="text-[11px] text-slate-400 font-medium ml-1">
-                    {current.location}
-                  </span>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 25 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -25 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="flex-1 flex flex-col justify-between"
+            >
+              {/* Card Top: Patient Info & Rating */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`w-11 h-11 rounded-full bg-gradient-to-tr ${current.avatarColor} text-white font-bold flex items-center justify-center text-sm shadow-sm`}
+                  >
+                    {current.initials}
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 font-heading leading-tight">
+                      {current.name}
+                    </h3>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      {[...Array(current.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
+                        />
+                      ))}
+                      <span className="text-[11px] text-slate-400 font-medium ml-1">
+                        {current.location}
+                      </span>
+                    </div>
+                  </div>
                 </div>
+
+                <span className="text-xs font-medium text-slate-400 tabular-nums">
+                  {current.date}
+                </span>
               </div>
-            </div>
 
-            <span className="text-xs font-medium text-slate-400 tabular-nums">
-              {current.date}
-            </span>
-          </div>
+              {/* Procedure Tag */}
+              <div className="mb-4">
+                <span className="text-[11px] font-semibold text-[#1E5BF9] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                  {current.treatment}
+                </span>
+              </div>
 
-          {/* Procedure Tag */}
-          <div className="mb-4">
-            <span className="text-[11px] font-semibold text-[#1E5BF9] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-              {current.treatment}
-            </span>
-          </div>
+              {/* Center Image */}
+              <div className="relative w-full h-56 sm:h-64 rounded-2xl sm:rounded-3xl overflow-hidden mb-6 shadow-sm border border-slate-100">
+                <Image
+                  src={current.image}
+                  alt={`Consultation for ${current.name}`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent" />
+              </div>
 
-          {/* Center Image */}
-          <div className="relative w-full h-56 sm:h-64 rounded-2xl sm:rounded-3xl overflow-hidden mb-6 shadow-sm border border-slate-100">
-            <Image
-              src={current.image}
-              alt={`Consultation for ${current.name}`}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent" />
-          </div>
-
-          {/* Review Quote */}
-          <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal mb-8">
-            &ldquo;{current.quote}&rdquo;
-          </blockquote>
+              {/* Review Quote */}
+              <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal mb-8">
+                &ldquo;{current.quote}&rdquo;
+              </blockquote>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Card Bottom: Brand Rule, Indicator Dots & Next Arrow Button */}
           <div className="flex items-center justify-between pt-5 border-t border-slate-100">
@@ -168,7 +192,7 @@ export default function TestimonialsSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to review ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     idx === currentIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
@@ -181,7 +205,7 @@ export default function TestimonialsSection() {
             <button
               onClick={handleNext}
               aria-label="Next Review"
-              className="w-11 h-11 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
+              className="w-11 h-11 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-110 active:scale-95"
             >
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -189,7 +213,7 @@ export default function TestimonialsSection() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

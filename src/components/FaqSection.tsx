@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FaqItem {
   question: string;
@@ -59,7 +60,13 @@ export default function FaqSection() {
       </div>
 
       {/* Header Bar */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16"
+      >
         <div>
           <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight leading-tight">
             Questions
@@ -86,26 +93,40 @@ export default function FaqSection() {
             <span>&#123; FAQ &#125;</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Floating FAQ Card (Matches haidigi.com) */}
-      <div className="relative z-10 max-w-xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="relative z-10 max-w-xl mx-auto"
+      >
         
         {/* Layered Drop Shadow */}
         <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/8 rounded-[36px] sm:rounded-[44px] rotate-1 transform scale-98 pointer-events-none" />
 
         {/* Main Card */}
-        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.12)] min-h-[300px] flex flex-col justify-between transition-all">
+        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.12)] min-h-[320px] flex flex-col justify-between transition-all">
           
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-heading tracking-tight leading-snug mb-4">
-              {current.question}
-            </h3>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-heading tracking-tight leading-snug mb-4">
+                {current.question}
+              </h3>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              {current.answer}
-            </p>
-          </div>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                {current.answer}
+              </p>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Bottom Strip: Brand Rule, Indicator Dots & Next Arrow Button */}
           <div className="flex items-center justify-between pt-8 mt-6 border-t border-slate-100">
@@ -120,7 +141,7 @@ export default function FaqSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Go to question ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     idx === currentIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
@@ -133,7 +154,7 @@ export default function FaqSection() {
             <button
               onClick={handleNext}
               aria-label="Next Question"
-              className="w-11 h-11 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
+              className="w-11 h-11 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-110 active:scale-95"
             >
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -141,7 +162,7 @@ export default function FaqSection() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

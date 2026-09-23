@@ -1,13 +1,19 @@
-"useic client";
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Phone, Bell, User, MapPin, Menu, X, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-30 pt-6 px-6 sm:px-12 lg:px-20 flex items-center justify-between w-full">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="relative z-30 pt-6 px-6 sm:px-12 lg:px-20 flex items-center justify-between w-full"
+    >
       {/* Brand Logo */}
       <Link href="/" className="flex items-center gap-3 group">
         <div className="w-10 h-10 rounded-full bg-[#1E5BF9] flex items-center justify-center shadow-[0_4px_16px_rgba(30,91,249,0.35)] group-hover:scale-105 transition-transform">
@@ -149,6 +155,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

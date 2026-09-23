@@ -3,13 +3,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./Navbar";
-import { Stethoscope, Play, ArrowRight, Star } from "lucide-react";
+import { Stethoscope, Play, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-[#F8FAFC]">
       {/* Organic Curved Blue Wave on Right Side */}
-      <div className="absolute right-0 top-0 bottom-0 w-full md:w-[48%] lg:w-[45%] xl:w-[43%] pointer-events-none z-0">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="absolute right-0 top-0 bottom-0 w-full md:w-[48%] lg:w-[45%] xl:w-[43%] pointer-events-none z-0"
+      >
         <svg
           viewBox="0 0 500 900"
           preserveAspectRatio="none"
@@ -25,7 +31,7 @@ export default function HeroSection() {
             fill="#1E5BF9"
           />
         </svg>
-      </div>
+      </motion.div>
 
       {/* 1. Header & Navigation */}
       <Navbar />
@@ -34,23 +40,43 @@ export default function HeroSection() {
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 pt-4 pb-8 lg:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-1">
           
           {/* Left Column (Headlines, CTA & Floating Results Card) */}
-          <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center pt-2 lg:pt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center pt-2 lg:pt-4"
+          >
             {/* Title with Glossy 3D Blue Lens in 'o' */}
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.04] font-heading">
-              Innovati<span className="glossy-lens-sphere mx-0.5 inline-block" />n
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.04] font-heading"
+            >
+              Innovati<span className="glossy-lens-sphere mx-0.5 inline-block animate-pulse" />n
               <br />
               Clinic
-            </h1>
+            </motion.h1>
 
             {/* Subtitle */}
-            <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-md leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-5 text-base sm:text-lg text-slate-600 max-w-md leading-relaxed"
+            >
               We treat <span className="text-slate-400 font-medium">not only symptoms</span>.{" "}
               <strong className="text-slate-950 font-bold">We care</strong>{" "}
               <span className="text-slate-600">about each person.</span>
-            </p>
+            </motion.p>
 
             {/* Find Doctor / Book Visit CTA Pill */}
-            <div className="mt-8 flex items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 flex items-center gap-4"
+            >
               <Link
                 href="#book-appointment"
                 className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1E5BF9] to-[#3B82F6] hover:from-[#184FD8] hover:to-[#2563EB] text-white font-semibold pl-7 pr-2.5 py-2.5 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.32)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
@@ -60,10 +86,15 @@ export default function HeroSection() {
                   <Stethoscope className="w-5 h-5" />
                 </span>
               </Link>
-            </div>
+            </motion.div>
 
             {/* Floating Clinic Tour & Results Card */}
-            <div className="mt-12 bg-white/95 backdrop-blur-md p-4 rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] flex items-center gap-4 sm:gap-5 max-w-[460px]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-12 bg-white/95 backdrop-blur-md p-4 rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] flex items-center gap-4 sm:gap-5 max-w-[460px] hover:shadow-[0_20px_50px_rgba(30,91,249,0.12)] transition-shadow"
+            >
               {/* Virtual Tour Video Preview */}
               <a
                 href="#virtual-tour"
@@ -117,15 +148,20 @@ export default function HeroSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
           {/* Center Column: Cutout of Dr. Ruchita Sontakke & Interactive Floating Badges */}
           <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[480px] sm:h-[580px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12">
             
-            {/* Cutout Image of Doctor */}
-            <div className="relative z-10 w-[350px] sm:w-[420px] lg:w-[500px] xl:w-[560px] max-w-full scale-105 origin-bottom translate-y-1 sm:translate-y-2">
+            {/* Cutout Image of Doctor with entrance animation */}
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1.05 }}
+              transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-[350px] sm:w-[420px] lg:w-[500px] xl:w-[560px] max-w-full origin-bottom translate-y-1 sm:translate-y-2"
+            >
               <Image
                 src="/images/dr-ruchita-inner-border.png"
                 alt="Dr. Ruchita Sontakke, Chief Ophthalmologist at Jyoti Eye Care"
@@ -134,45 +170,77 @@ export default function HeroSection() {
                 priority
                 className="w-full h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]"
               />
-            </div>
+            </motion.div>
 
-            {/* Badge 1: • Reliability (Left of waist with connector line) */}
-            <div className="absolute left-[-10px] sm:left-4 top-[56%] z-20 pointer-events-auto">
-              <div className="relative flex items-center">
-                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            {/* Badge 1: • Reliability (Left of waist with connector line and gentle float) */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute left-[-10px] sm:left-4 top-[56%] z-20 pointer-events-auto"
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative flex items-center"
+              >
+                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                   Reliability
                 </div>
                 <div className="w-8 h-[1px] bg-slate-300 hidden sm:block" />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            {/* Badge 2: • Experience (Right of shoulder with connector line) */}
-            <div className="absolute right-[0px] sm:right-6 top-[28%] z-20 pointer-events-auto">
-              <div className="relative flex items-center flex-row-reverse">
-                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            {/* Badge 2: • Experience (Right of shoulder with connector line and gentle float) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="absolute right-[0px] sm:right-6 top-[28%] z-20 pointer-events-auto"
+            >
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="relative flex items-center flex-row-reverse"
+              >
+                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                   Experience
                 </div>
                 <div className="w-8 h-[1px] bg-slate-300 hidden sm:block" />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            {/* Badge 3: • Professional (Lower right near forearm) */}
-            <div className="absolute right-[-10px] sm:right-2 top-[68%] z-20 pointer-events-auto">
-              <div className="relative flex items-center flex-row-reverse">
-                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            {/* Badge 3: • Professional (Lower right near forearm and gentle float) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="absolute right-[-10px] sm:right-2 top-[68%] z-20 pointer-events-auto"
+            >
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="relative flex items-center flex-row-reverse"
+              >
+                <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-slate-100 text-xs font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                   Professional
                 </div>
                 <div className="w-6 h-[1px] bg-slate-300 hidden sm:block" />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
           </div>
 
           {/* Right Column: With Advanced Technologies (on Electric Blue) */}
-          <div className="lg:col-span-3 xl:col-span-3 text-white flex flex-col justify-between h-full pt-8 lg:pt-14 pb-4 z-10 pl-2 lg:pl-6">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-3 xl:col-span-3 text-white flex flex-col justify-between h-full pt-8 lg:pt-14 pb-4 z-10 pl-2 lg:pl-6"
+          >
             <div>
               <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.08] tracking-tight font-heading">
                 With
@@ -220,7 +288,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
     </section>

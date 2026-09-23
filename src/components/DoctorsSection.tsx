@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, UserPlus, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface DoctorMember {
   name: string;
@@ -47,7 +48,13 @@ export default function DoctorsSection() {
     <section id="doctor" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
       
       {/* Top Brand Divider & Appointment Pill (Matches haidigi.com) */}
-      <div className="flex flex-col items-center justify-center mb-12 sm:mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center justify-center mb-12 sm:mb-16"
+      >
         <div className="flex items-center gap-3 text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] mb-4">
           <span className="w-8 h-[1px] bg-slate-200" aria-hidden="true" />
           <span>JYOTI EYE CARE</span>
@@ -63,14 +70,19 @@ export default function DoctorsSection() {
             <UserPlus className="w-4 h-4" />
           </span>
         </Link>
-      </div>
+      </motion.div>
 
       {/* Main Grid: Left Description & Controls + Right 3 Doctor Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         {/* Left Column: Heading, Subtext & Controls */}
-        <div className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-6">
-          
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-6"
+        >
           <div>
             {/* Small Brand Icon */}
             <div className="flex items-center gap-2 mb-4">
@@ -122,7 +134,7 @@ export default function DoctorsSection() {
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     idx === activeIndex
                       ? "w-6 bg-[#1E5BF9]"
                       : "w-2 bg-slate-200 hover:bg-slate-300"
@@ -132,13 +144,18 @@ export default function DoctorsSection() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Right Column: 3 Elegant Doctor Cards */}
         <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {team.map((member, index) => (
-            <div
+            <motion.div
               key={member.name}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className={`group relative rounded-[28px] sm:rounded-[34px] overflow-hidden bg-white border transition-all duration-300 flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(30,91,249,0.08)] ${
                 index === activeIndex
                   ? "border-[#1E5BF9]/50 ring-2 ring-[#1E5BF9]/20"
@@ -174,7 +191,7 @@ export default function DoctorsSection() {
                 </p>
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

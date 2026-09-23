@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Eye, MapPin, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const InstagramIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -34,7 +35,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#070E20] text-white rounded-t-[36px] sm:rounded-t-[48px] pt-16 sm:pt-20 pb-10 px-6 sm:px-12 lg:px-20 mt-16 sm:mt-24 relative z-20">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8 }}
+      className="w-full bg-[#070E20] text-white rounded-t-[36px] sm:rounded-t-[48px] pt-16 sm:pt-20 pb-10 px-6 sm:px-12 lg:px-20 mt-16 sm:mt-24 relative z-20"
+    >
       
       {/* 4 Columns Top Grid (Matches haidigi.com) */}
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 pb-16 border-b border-white/10">
@@ -261,6 +268,6 @@ export default function Footer() {
         </div>
       </div>
 
-    </footer>
+    </motion.footer>
   );
 }

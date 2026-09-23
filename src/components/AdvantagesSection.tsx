@@ -1,14 +1,53 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { ShieldCheck, Award, Stethoscope, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+
+function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!inView) return;
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function update(time: number) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(Math.floor(ease * value));
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        setCount(value);
+      }
+    }
+    requestAnimationFrame(update);
+  }, [inView, value]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
 
 export default function AdvantagesSection() {
   return (
     <section id="about" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
       
       {/* Split Advantages Card Container (Matches haidigi.com Section 4) */}
-      <div className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_15px_50px_rgba(0,0,0,0.03)] grid grid-cols-1 lg:grid-cols-12">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_15px_50px_rgba(0,0,0,0.03)] grid grid-cols-1 lg:grid-cols-12"
+      >
         
         {/* Left Side: Vibrant Royal Blue Panel with Doctor & Floating Tags */}
         <div className="lg:col-span-5 bg-[#1E5BF9] text-white p-8 sm:p-12 lg:p-14 relative flex flex-col justify-between overflow-hidden min-h-[520px] lg:min-h-[600px]">
@@ -34,7 +73,13 @@ export default function AdvantagesSection() {
           <div className="relative z-10 mt-auto pt-8 flex justify-center items-end">
             
             {/* Cutout Image of Dr. Ruchita */}
-            <div className="relative w-[280px] sm:w-[320px] lg:w-[340px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative w-[280px] sm:w-[320px] lg:w-[340px]"
+            >
               <Image
                 src="/images/dr-ruchita-actual-clean.png"
                 alt="Dr. Ruchita Sontakke, Chief Eye Surgeon"
@@ -42,31 +87,43 @@ export default function AdvantagesSection() {
                 height={550}
                 className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
               />
-            </div>
+            </motion.div>
 
-            {/* Floating Tag 1: • Experienced Surgeon */}
-            <div className="absolute left-[-8px] top-[25%] pointer-events-auto">
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            {/* Floating Tag 1: • MAMC Pedigree */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-[-8px] top-[25%] pointer-events-auto"
+            >
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 MAMC Pedigree
               </div>
-            </div>
+            </motion.div>
 
             {/* Floating Tag 2: • Certified Clinic */}
-            <div className="absolute left-[-12px] bottom-[25%] pointer-events-auto">
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+              className="absolute left-[-12px] bottom-[25%] pointer-events-auto"
+            >
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Certified Clinic
               </div>
-            </div>
+            </motion.div>
 
             {/* Floating Tag 3: • Modern Equipment */}
-            <div className="absolute right-[-10px] bottom-[35%] pointer-events-auto">
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform">
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="absolute right-[-10px] bottom-[35%] pointer-events-auto"
+            >
+              <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-semibold text-slate-800 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Modern Equipment
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
@@ -81,13 +138,18 @@ export default function AdvantagesSection() {
             <span className="text-[#1E5BF9]">&#123; ADVANTAGES &#125;</span>
           </div>
 
-          {/* 2x2 Statistics Grid */}
+          {/* 2x2 Statistics Grid with Animated Counters */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
             
             {/* Stat 1 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                12+
+                <Counter value={12} suffix="+" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
                 Years of surgical experience
@@ -95,12 +157,17 @@ export default function AdvantagesSection() {
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
                 Dedicated ophthalmic clinical practice since 2014, with residency at MAMC New Delhi, elevating diagnostic precision and surgical outcomes.
               </p>
-            </div>
+            </motion.div>
 
             {/* Stat 2 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                6+
+                <Counter value={6} suffix="+" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
                 Sub-Specialty domains
@@ -108,12 +175,17 @@ export default function AdvantagesSection() {
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
                 From micro-incision cataract surgery to functional oculoplasty, dry eye tear rehabilitation, and pediatric eye screenings.
               </p>
-            </div>
+            </motion.div>
 
             {/* Stat 3 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                98%
+                <Counter value={98} suffix="%" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
                 Satisfied patients
@@ -121,12 +193,17 @@ export default function AdvantagesSection() {
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
                 Documented positive patient feedback based on empathetic consultations, clear communication, and rapid visual recovery.
               </p>
-            </div>
+            </motion.div>
 
             {/* Stat 4 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                99%
+                <Counter value={99} suffix="%" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
                 Diagnostic accuracy
@@ -134,7 +211,7 @@ export default function AdvantagesSection() {
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
                 Backed by authentic Goldmann applanation tonometry, 40x slit-lamp biomicroscopy, and computerized objective refraction.
               </p>
-            </div>
+            </motion.div>
 
           </div>
 
@@ -156,10 +233,16 @@ export default function AdvantagesSection() {
 
         </div>
 
-      </div>
+      </motion.div>
 
       {/* Statement Quote Banner (Matches haidigi.com underneath Advantages) */}
-      <div className="mt-16 sm:mt-24 text-center px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-16 sm:mt-24 text-center px-4"
+      >
         <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-tight text-slate-950 max-w-4xl mx-auto">
           Medicine <span className="text-slate-400 font-bold">starts with</span> science,{" "}
           <span className="text-slate-400 font-bold">but true healing</span>{" "}
@@ -168,7 +251,7 @@ export default function AdvantagesSection() {
             <span className="absolute -bottom-2 left-0 right-0 h-1 bg-[#1E5BF9]/40 rounded-full" />
           </span>
         </h3>
-      </div>
+      </motion.div>
 
     </section>
   );

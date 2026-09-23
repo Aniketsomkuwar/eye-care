@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { User, Phone, Calendar, ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AppointmentSection() {
   const [name, setName] = useState("");
@@ -33,7 +34,13 @@ export default function AppointmentSection() {
       className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto"
     >
       {/* Big Split Appointment Card (Matches haidigi.com) */}
-      <div className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] grid grid-cols-1 lg:grid-cols-12">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] grid grid-cols-1 lg:grid-cols-12"
+      >
         
         {/* Left Side: Booking Form */}
         <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between">
@@ -74,49 +81,75 @@ export default function AppointmentSection() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  
                   {/* Name Input */}
-                  <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                  <div>
+                    <label
+                      htmlFor="patient-name"
+                      className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2"
+                    >
+                      Your name *
+                    </label>
                     <input
+                      id="patient-name"
                       type="text"
                       required
-                      placeholder="Name"
+                      placeholder="e.g. Rajesh Kumar"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-900 text-sm font-medium pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-900 text-sm font-medium px-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all placeholder:text-slate-400"
                     />
                   </div>
 
                   {/* Phone Input */}
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                  <div>
+                    <label
+                      htmlFor="patient-phone"
+                      className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2"
+                    >
+                      Phone number *
+                    </label>
                     <input
+                      id="patient-phone"
                       type="tel"
                       required
-                      placeholder="Phone number"
+                      placeholder="+91 94221 00000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-900 text-sm font-medium pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-900 text-sm font-medium px-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all placeholder:text-slate-400"
                     />
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Date Input */}
-                  <div className="relative">
-                    <Calendar className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <div>
+                    <label
+                      htmlFor="appointment-date"
+                      className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2"
+                    >
+                      Preferred date
+                    </label>
                     <input
+                      id="appointment-date"
                       type="date"
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-700 text-sm font-medium pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-800 text-sm font-medium px-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none transition-all cursor-pointer"
                     />
                   </div>
 
-                  {/* Service Needed Dropdown */}
+                  {/* Service Dropdown */}
                   <div className="relative">
+                    <label
+                      htmlFor="service-select"
+                      className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2"
+                    >
+                      Service required
+                    </label>
                     <select
+                      id="service-select"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                       className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-800 text-sm font-medium px-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none appearance-none transition-all cursor-pointer"
@@ -135,13 +168,15 @@ export default function AppointmentSection() {
 
                 {/* Submit Row: Button + Guarantee Text */}
                 <div className="pt-4 flex flex-wrap items-center gap-5">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="inline-flex items-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white font-bold text-sm px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                    className="inline-flex items-center gap-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white font-bold text-sm px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(30,91,249,0.35)] transition-colors cursor-pointer"
                   >
                     <span>BOOK NOW</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </motion.button>
 
                   <span className="text-xs text-slate-500 font-medium">
                     Guaranteed response within <strong className="text-slate-900 font-bold">15 minutes</strong>
@@ -166,7 +201,13 @@ export default function AppointmentSection() {
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-blue-400/30 blur-3xl pointer-events-none" />
 
           {/* Cutout Image of Doctor */}
-          <div className="relative z-10 w-[280px] sm:w-[340px] lg:w-[380px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 w-[280px] sm:w-[340px] lg:w-[380px]"
+          >
             <Image
               src="/images/dr-ruchita-actual-clean.png"
               alt="Dr. Ruchita Sontakke, Eye Surgeon"
@@ -174,35 +215,47 @@ export default function AppointmentSection() {
               height={600}
               className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
             />
-          </div>
+          </motion.div>
 
           {/* Floating Tag 1: • EXPERIENCED DOCTORS */}
-          <div className="absolute left-6 top-[32%] z-20 pointer-events-auto">
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform">
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-6 top-[32%] z-20 pointer-events-auto"
+          >
+            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Experienced Doctors
             </div>
-          </div>
+          </motion.div>
 
           {/* Floating Tag 2: • CERTIFIED CLINIC */}
-          <div className="absolute right-6 top-[20%] z-20 pointer-events-auto">
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform">
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute right-6 top-[20%] z-20 pointer-events-auto"
+          >
+            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Certified Clinic
             </div>
-          </div>
+          </motion.div>
 
           {/* Floating Tag 3: • MODERN EQUIPMENT */}
-          <div className="absolute right-8 bottom-[20%] z-20 pointer-events-auto">
-            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform">
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
+            className="absolute right-8 bottom-[20%] z-20 pointer-events-auto"
+          >
+            <div className="bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-100 text-[11px] font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
               Modern Equipment
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );
