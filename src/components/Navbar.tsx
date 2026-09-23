@@ -33,31 +33,31 @@ export default function Navbar() {
       <nav className="hidden md:flex items-center bg-white/95 backdrop-blur-md px-2 py-1.5 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.06)] border border-slate-100">
         <Link
           href="/"
-          className="bg-[#1E5BF9] text-white px-5 py-2 rounded-full font-semibold text-sm shadow-sm transition-all"
+          className="bg-[#1E5BF9] text-white px-5 py-2 rounded-full font-semibold text-sm shadow-sm transition-colors"
         >
           Home
         </Link>
         <Link
           href="#services"
-          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-slate-50"
+          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
           Services
         </Link>
         <Link
           href="#doctor"
-          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-slate-50"
+          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
           Doctors
         </Link>
         <Link
           href="#about"
-          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-slate-50"
+          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
           About Us
         </Link>
         <Link
           href="#contact"
-          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-slate-50"
+          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
           Contact
         </Link>
@@ -81,24 +81,6 @@ export default function Navbar() {
           <Phone className="w-4 h-4 fill-white" />
         </a>
 
-        {/* Bell button: visible on tablet/desktop */}
-        <a
-          href="#opd-schedule"
-          title="Evening OPD: 6:30 PM - 9:30 PM"
-          className="hidden sm:flex w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm relative hover:scale-105 active:scale-95"
-        >
-          <Bell className="w-4 h-4" />
-          <span className="w-2.5 h-2.5 rounded-full bg-amber-400 absolute top-2 right-2 border-2 border-[#1E5BF9]" />
-        </a>
-
-        {/* Profile button: visible on tablet/desktop */}
-        <a
-          href="#book-appointment"
-          title="Consultation Profile"
-          className="hidden sm:flex w-10 h-10 rounded-full bg-[#0A1128] hover:bg-[#15234D] items-center justify-center text-white transition-all shadow-md hover:scale-105 active:scale-95"
-        >
-          <User className="w-4 h-4" />
-        </a>
 
         {/* Mobile menu button */}
         <button

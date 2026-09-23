@@ -13,6 +13,7 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
     if (!inView) return;
     const duration = 1600;
     const startTime = performance.now();
+    let animId: number;
 
     function update(time: number) {
       const elapsed = time - startTime;
@@ -20,16 +21,19 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
       const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(Math.floor(ease * value));
       if (progress < 1) {
-        requestAnimationFrame(update);
+        animId = requestAnimationFrame(update);
       } else {
         setCount(value);
       }
     }
-    requestAnimationFrame(update);
+    animId = requestAnimationFrame(update);
+    return () => {
+      if (animId) cancelAnimationFrame(animId);
+    };
   }, [inView, value]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className="tabular-nums">
       {count}
       {suffix}
     </span>

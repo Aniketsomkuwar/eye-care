@@ -80,3 +80,28 @@
   height: 1px;
   background-color: rgba(148, 163, 184, 0.6);
 }
+
+/* Custom Themed Scrollbar (Q10 compliance) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1E5BF9;
+}
+
+/* Focus Visible Accessible Styling */
+:focus-visible {
+  outline: 2px solid #1E5BF9;
+  outline-offset: 2px;
+}

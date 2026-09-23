@@ -65,9 +65,8 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mt-4 sm:mt-5 text-sm sm:text-lg text-slate-600 max-w-md leading-relaxed"
           >
-            We treat <span className="text-slate-400 font-medium">not only symptoms</span>.{" "}
-            <strong className="text-slate-950 font-bold">We care</strong>{" "}
-            <span className="text-slate-600">about each person.</span>
+            Dedicated to <strong className="text-slate-950 font-bold">advanced microsurgical precision</strong> and{" "}
+            <span className="text-slate-600">comprehensive ophthalmic care for every patient.</span>
           </motion.p>
 
           {/* Find Doctor / Book Visit CTA Pill */}

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Eye, MapPin, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import { Eye, MapPin, Phone, Mail, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const InstagramIcon = () => (
@@ -68,43 +68,45 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Social Links */}
+          {/* Verified Clinic Channels */}
           <div className="flex items-center gap-3 mt-8">
             <a
               href="https://instagram.com/eyecarewith_rs"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram @eyecarewith_rs"
+              title="Instagram @eyecarewith_rs"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
               <InstagramIcon />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://wa.me/918830383320?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20eye%20consultation%20at%20Jyoti%20Eye%20Care."
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="Chat on WhatsApp"
+              title="WhatsApp: +91 88303 83320"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
-              <LinkedinIcon />
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://maps.google.com/?q=Jyoti+Eye+Care+Gopal+Nagar+Nagpur"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
+              aria-label="Find clinic on Google Maps"
+              title="Google Maps Clinic Direction"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
-              <FacebookIcon />
+              <MapPin className="w-4 h-4 text-blue-400" />
             </a>
             <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
+              href="tel:+918830383320"
+              aria-label="Call clinic desk"
+              title="Call Clinic: +91 88303 83320"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
-              <YoutubeIcon />
+              <Phone className="w-4 h-4 text-[#1E5BF9]" />
             </a>
           </div>
         </div>
@@ -255,7 +257,7 @@ export default function Footer() {
           <Link href="#terms" className="hover:text-slate-300 transition-colors">
             Terms of Service
           </Link>
-          <Link href="#opd" className="hover:text-slate-300 transition-colors">
+          <Link href="#book-appointment" className="hover:text-slate-300 transition-colors">
             OPD Timings
           </Link>
         </div>

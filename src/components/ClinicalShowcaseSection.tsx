@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, HeartHandshake, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, Award, HeartHandshake, Eye, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ShowcaseItem {
@@ -33,7 +33,7 @@ const showcaseItems: ShowcaseItem[] = [
     description:
       "Equipped with Alcon phacoemulsification systems and high-magnification ophthalmic operating microscopes for sutureless cataract procedures.",
     image: "/images/doctor-ot-phaco.jpg",
-    icon: Sparkles,
+    icon: Activity,
     span: "lg:col-span-6",
   },
   {
