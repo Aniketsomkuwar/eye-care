@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, HeartHandshake, Eye, Activity } from "lucide-react";
+import { ArrowRight, Award, HeartHandshake, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ShowcaseItem {
@@ -12,7 +12,6 @@ interface ShowcaseItem {
   description: string;
   image: string;
   icon: React.ElementType;
-  span?: string;
 }
 
 const showcaseItems: ShowcaseItem[] = [
@@ -24,17 +23,6 @@ const showcaseItems: ShowcaseItem[] = [
       "Dr. Ruchita Sontakke presenting scientific findings on corneal biometry and premium IOL calculations before national ophthalmologists in New Delhi.",
     image: "/images/doctor-conference-speaker.jpg",
     icon: Award,
-    span: "lg:col-span-6",
-  },
-  {
-    id: "surgery-ot",
-    title: "Modular Surgical Suite & Advanced Phaco OT",
-    category: "Surgical Technology",
-    description:
-      "Equipped with Alcon phacoemulsification systems and high-magnification ophthalmic operating microscopes for sutureless cataract procedures.",
-    image: "/images/doctor-ot-phaco.jpg",
-    icon: Activity,
-    span: "lg:col-span-6",
   },
   {
     id: "community-camp",
@@ -44,7 +32,6 @@ const showcaseItems: ShowcaseItem[] = [
       "Extending ethical eye healthcare to rural and underserved elderly patients across Maharashtra through diagnostic field camps.",
     image: "/images/doctor-community-camp.jpg",
     icon: HeartHandshake,
-    span: "lg:col-span-6",
   },
   {
     id: "oculoplasty-case",
@@ -54,7 +41,6 @@ const showcaseItems: ShowcaseItem[] = [
       "Documented photographic evidence of ptosis correction, eyelid tumor excision, and periocular reconstructive surgeries restoring full vision.",
     image: "/images/case-oculoplasty-angles.jpg",
     icon: Eye,
-    span: "lg:col-span-6",
   },
 ];
 
@@ -85,7 +71,7 @@ export default function ClinicalShowcaseSection() {
       </motion.div>
 
       {/* Grid of Real Evidence Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {showcaseItems.map((item, index) => {
           const Icon = item.icon;
           return (
@@ -96,7 +82,7 @@ export default function ClinicalShowcaseSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className={`${item.span || "lg:col-span-6"} group relative rounded-[32px] sm:rounded-[40px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(30,91,249,0.1)] transition-all flex flex-col justify-between`}
+              className="group relative rounded-[32px] sm:rounded-[40px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(30,91,249,0.1)] transition-all flex flex-col justify-between"
             >
               {/* Photo Stage */}
               <div className="relative w-full h-[280px] sm:h-[340px] overflow-hidden bg-slate-100">
@@ -104,7 +90,7 @@ export default function ClinicalShowcaseSection() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />

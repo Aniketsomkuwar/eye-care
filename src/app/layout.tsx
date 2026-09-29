@@ -102,7 +102,7 @@ const jsonLd = {
   image: "https://jyotieyecare.com/images/dr-ruchita-flowers.jpg",
   logo: "https://jyotieyecare.com/icon.svg",
   url: "https://jyotieyecare.com",
-  telephone: "+918830383320",
+  telephone: "+917058236990",
   email: "ruchitasontakke451@gmail.com",
   priceRange: "₹₹",
   medicalSpecialty: [
@@ -137,6 +137,10 @@ const jsonLd = {
     description:
       "MBBS (IGGMC) • MS Ophthalmology (Maulana Azad Medical College - MAMC, New Delhi) • DNB • Ex-Senior Resident MAMC Delhi",
     medicalSpecialty: "Ophthalmology",
+    sameAs: [
+      "https://in.linkedin.com/in/ruchita-sontakke-6283a8294",
+      "https://www.instagram.com/eyecarewith_rs/",
+    ],
   },
   aggregateRating: {
     "@type": "AggregateRating",

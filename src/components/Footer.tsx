@@ -4,6 +4,14 @@ import Link from "next/link";
 import { Eye, MapPin, Phone, Mail, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
+const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
 const InstagramIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
 );
@@ -59,6 +67,16 @@ export default function Footer() {
           {/* Verified Clinic Channels */}
           <div className="flex items-center gap-3 mt-8">
             <a
+              href="https://in.linkedin.com/in/ruchita-sontakke-6283a8294"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Dr. Ruchita Sontakke on LinkedIn"
+              title="LinkedIn: Dr. Ruchita Sontakke"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#0A66C2] border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
+            >
+              <LinkedInIcon className="w-4 h-4" />
+            </a>
+            <a
               href="https://instagram.com/eyecarewith_rs"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,11 +87,11 @@ export default function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href="https://wa.me/918830383320?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20eye%20consultation%20at%20Jyoti%20Eye%20Care."
+              href="https://wa.me/917058236990?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20eye%20consultation%20at%20Jyoti%20Eye%20Care."
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              title="WhatsApp: +91 88303 83320"
+              title="WhatsApp: +91 70582 36990"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
               <MessageCircle className="w-4 h-4 text-emerald-400" />
@@ -89,9 +107,9 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-blue-400" />
             </a>
             <a
-              href="tel:+918830383320"
+              href="tel:+917058236990"
               aria-label="Call clinic desk"
-              title="Call Clinic: +91 88303 83320"
+              title="Call Clinic: +91 70582 36990"
               className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-105"
             >
               <Phone className="w-4 h-4 text-[#1E5BF9]" />
@@ -146,17 +164,17 @@ export default function Footer() {
           <ul className="space-y-3 text-xs sm:text-sm text-slate-400">
             <li>
               <Link href="#services" className="hover:text-white transition-colors">
-                Cataract Surgery (Phaco &amp; MSICS)
+                Refractive Error and Glasses Prescription
+              </Link>
+            </li>
+            <li>
+              <Link href="#services" className="hover:text-white transition-colors">
+                Cataract Evaluation
               </Link>
             </li>
             <li>
               <Link href="#services" className="hover:text-white transition-colors">
                 Oculoplasty &amp; Eyelid Surgery
-              </Link>
-            </li>
-            <li>
-              <Link href="#services" className="hover:text-white transition-colors">
-                Comprehensive Eye Examinations
               </Link>
             </li>
             <li>
@@ -191,8 +209,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#1E5BF9] flex-shrink-0" />
-                <a href="tel:+918830383320" className="hover:text-white transition-colors">
-                  +91 88303 83320
+                <a href="tel:+917058236990" className="hover:text-white transition-colors">
+                  +91 70582 36990
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

@@ -21,7 +21,7 @@ const faqs: FaqItem[] = [
     number: "02",
     question: "What are your OPD consultation visiting hours?",
     answer:
-      "Dr. Ruchita Sontakke conducts in-clinic diagnostic evaluations Monday to Saturday from 6:30 PM to 9:30 PM. Morning hours are dedicated to advanced microsurgical operating room procedures.",
+      "Dr. Ruchita Sontakke conducts in-clinic diagnostic evaluations Monday to Saturday from 6:30 PM to 9:30 PM.",
   },
   {
     number: "03",

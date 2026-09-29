@@ -8,7 +8,7 @@ export default function AppointmentSection() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
-  const [service, setService] = useState("Cataract Surgery");
+  const [service, setService] = useState("Routine Eye Checkup");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -24,7 +24,7 @@ export default function AppointmentSection() {
       service
     )}%0A*OPD Slot:* Evening 6:30 PM - 9:30 PM`;
 
-    window.open(`https://wa.me/918830383320?text=${text}`, "_blank");
+    window.open(`https://wa.me/917058236990?text=${text}`, "_blank");
     setSubmitted(true);
   };
 
@@ -132,27 +132,28 @@ export default function AppointmentSection() {
                   </div>
 
                   {/* Service Dropdown */}
-                  <div className="relative">
+                  <div>
                     <label
                       htmlFor="service-select"
                       className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2"
                     >
                       Service required
                     </label>
-                    <select
-                      id="service-select"
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                      className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-800 text-sm font-medium px-4 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none appearance-none transition-all cursor-pointer"
-                    >
-                      <option value="Cataract Surgery">Cataract Surgery (Phaco / MSICS)</option>
-                      <option value="Oculoplasty & Eyelids">Oculoplasty &amp; Eyelid Surgery</option>
-                      <option value="Comprehensive Eye Exam">Comprehensive Eye Checkup</option>
-                      <option value="Dry Eye & Screen Fatigue">Dry Eye / Screen Strain</option>
-                      <option value="Glaucoma & Diabetic Clearance">Glaucoma / Diabetic Screening</option>
-                      <option value="Pediatric Eye Screening">Pediatric Eye Screening</option>
-                    </select>
-                    <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <div className="relative flex items-center">
+                      <select
+                        id="service-select"
+                        value={service}
+                        onChange={(e) => setService(e.target.value)}
+                        className="w-full bg-[#F8FAFC] hover:bg-[#F1F5F9] focus:bg-white text-slate-800 text-sm font-medium pl-4 pr-10 py-3.5 rounded-2xl border border-slate-200/80 focus:border-[#1E5BF9] focus:ring-2 focus:ring-blue-100 outline-none appearance-none transition-all cursor-pointer"
+                      >
+                        <option value="Routine Eye Checkup">Routine Eye Checkup</option>
+                        <option value="Oculoplasty and Eyelid Surgery">Oculoplasty and Eyelid Surgery</option>
+                        <option value="Dry Eye / Screen Strain">Dry Eye / Screen Strain</option>
+                        <option value="Glaucoma / Diabetic Screening">Glaucoma / Diabetic Screening</option>
+                        <option value="Pediatric Eye Screening">Pediatric Eye Screening</option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    </div>
                   </div>
 
                 </div>
@@ -243,7 +244,7 @@ export default function AppointmentSection() {
               <span className="text-white font-bold text-sm">Mon - Sat: 6:30 PM - 9:30 PM</span>
             </div>
             <a
-              href="tel:+918830383320"
+              href="tel:+917058236990"
               className="inline-flex items-center gap-1.5 bg-white text-[#1E5BF9] hover:bg-blue-50 px-3.5 py-2 rounded-full font-bold text-xs shadow-md transition-transform hover:scale-105"
             >
               <span>Call Helpline</span>

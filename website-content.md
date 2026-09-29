@@ -15,9 +15,9 @@
 | **Sub-tagline** | Dr. Ruchita Sontakke • MBBS, MS (Ophthalmology), DNB • Ex-SR MAMC Delhi |
 | **Clinic Mission** | At Jyoti Eye Care, our aim is to provide accessible, ethical, and comprehensive eye care in a comfortable and patient-friendly environment. Whether it is a routine eye examination, cataract evaluation, or an oculoplastic concern, every patient is treated with care, precision, and compassion. |
 | **Doctor's Philosophy Quote** | “Clear vision begins with the right diagnosis, but exceptional eye care begins with understanding the patient.” |
-| **Primary Contact Phone** | +91 88303 83320 |
-| **Display Phone** | +91 88303 83320 / Jyoti Eye Care OPD |
-| **Emergency Hotline** | +91 88303 83320 |
+| **Primary Contact Phone** | +91 70582 36990 |
+| **Display Phone** | +91 70582 36990 / Jyoti Eye Care OPD |
+| **Emergency Hotline** | +91 70582 36990 |
 | **Official Email** | ruchitasontakke451@gmail.com |
 | **Clinic Address** | 4383, Gopal Nagar, Near Pratap Nagar Ring Road, Nagpur, Maharashtra - 440022, India |
 | **Landmark** | 4383 Gopal Nagar, accessible from Pratap Nagar Ring Road, Nagpur |
@@ -265,7 +265,7 @@ Dr. Ruchita Sontakke created the digital eye wellness initiative **@eyecarewith_
 **A**: Jyoti Eye Care is situated at **4383, Gopal Nagar, Near Pratap Nagar Ring Road, Nagpur, Maharashtra - 440022**. Landmark: Easily accessible from the main Pratap Nagar Ring Road junction with ample parking facilities.
 
 **Q7: How do I book an appointment?**  
-**A**: Patients can book by calling the clinic directly at **`+91 88303 83320`** or scheduling a slot online via the website booking portal.
+**A**: Patients can book by calling the clinic directly at **`+91 70582 36990`** or scheduling a slot online via the website booking portal.
 
 ---
 

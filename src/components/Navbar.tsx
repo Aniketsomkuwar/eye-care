@@ -47,7 +47,7 @@ export default function Navbar() {
           href="#doctor"
           className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
-          Doctors
+          Doctor
         </Link>
         <Link
           href="#about"
@@ -71,8 +71,8 @@ export default function Navbar() {
 
         {/* Call button: visible on all screens */}
         <a
-          href="tel:+918830383320"
-          title="Call Clinic Desk: +91 88303 83320"
+          href="tel:+917058236990"
+          title="Call Clinic Desk: +91 70582 36990"
           className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1E5BF9] sm:bg-white/15 hover:bg-[#1647C9] sm:hover:bg-white/25 border border-transparent sm:border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm shadow-sm hover:scale-105 active:scale-95"
         >
           <Phone className="w-4 h-4 fill-white" />
@@ -111,7 +111,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="text-slate-600 font-medium text-lg py-2 border-b border-slate-100"
           >
-            Doctors
+            Doctor
           </Link>
           <Link
             href="#about"
@@ -129,10 +129,10 @@ export default function Navbar() {
           </Link>
           <div className="pt-2 flex flex-col gap-2">
             <a
-              href="tel:+918830383320"
+              href="tel:+917058236990"
               className="w-full py-3 bg-[#1E5BF9] text-white rounded-xl text-center font-semibold flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4 fill-white" /> Call +91 88303 83320
+              <Phone className="w-4 h-4 fill-white" /> Call +91 70582 36990
             </a>
           </div>
         </div>

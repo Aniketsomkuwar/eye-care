@@ -149,13 +149,13 @@ export default function AdvantagesSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                <Counter value={12} suffix="+" />
+                <Counter value={6} suffix="+" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
                 Years of surgical experience
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
-                Dedicated ophthalmic clinical practice since 2014, with residency at MAMC New Delhi, elevating diagnostic precision and surgical outcomes.
+                Dedicated ophthalmic clinical practice and surgical residency at MAMC New Delhi, elevating diagnostic precision and surgical outcomes.
               </p>
             </motion.div>
 

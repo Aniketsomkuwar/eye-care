@@ -16,22 +16,22 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   {
     number: "01",
-    title: "Cataract Surgery",
-    category: "Surgical",
-    description: "Micro-incision Phacoemulsification, MSICS & premium IOL implants.",
-  },
-  {
-    number: "02",
     title: "Oculoplasty",
     category: "Sub-Specialty",
     description: "Ptosis correction, cosmetic eyelid reconstruction & lacrimal care.",
     badge: "Ex-SR MAMC",
   },
   {
-    number: "03",
-    title: "Comprehensive Care",
+    number: "02",
+    title: "Routine Eye Checkup",
     category: "Preventive",
     description: "Gold-standard Goldmann tonometry, dilated slit-lamp exams & refraction.",
+  },
+  {
+    number: "03",
+    title: "Cataract Surgery",
+    category: "Surgical",
+    description: "Micro-incision Phacoemulsification, MSICS & premium IOL implants.",
   },
   {
     number: "04",

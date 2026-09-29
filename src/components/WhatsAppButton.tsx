@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   return (
     <aside aria-label="Quick WhatsApp Contact" className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40">
       <a
-        href="https://wa.me/918830383320?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20eye%20consultation%20at%20Jyoti%20Eye%20Care."
+        href="https://wa.me/917058236990?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20eye%20consultation%20at%20Jyoti%20Eye%20Care."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp with Jyoti Eye Care"
