@@ -4,6 +4,7 @@ import MissionSection from "@/components/MissionSection";
 import ServicesSection from "@/components/ServicesSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import DoctorsSection from "@/components/DoctorsSection";
+import OculoplastySection from "@/components/OculoplastySection";
 import ClinicalShowcaseSection from "@/components/ClinicalShowcaseSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AppointmentSection from "@/components/AppointmentSection";
@@ -33,7 +34,10 @@ export default function Home() {
       {/* Section 5: Meet The Doctors / Clinical Team */}
       <DoctorsSection />
 
-      {/* Section 6: Real Clinical Evidence & Surgery Showcase */}
+      {/* Section 6: Advanced Oculoplasty & Eyelid Aesthetics */}
+      <OculoplastySection />
+
+      {/* Section 7: Real Clinical Evidence & Surgery Showcase */}
       <ClinicalShowcaseSection />
 
       {/* Section 7: Patient Reviews & Testimonials */}

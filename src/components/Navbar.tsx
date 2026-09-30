@@ -44,6 +44,12 @@ export default function Navbar() {
           Services
         </Link>
         <Link
+          href="#oculoplasty"
+          className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
+        >
+          Oculoplasty
+        </Link>
+        <Link
           href="#doctor"
           className="text-slate-600 hover:text-slate-900 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-slate-50"
         >
@@ -105,6 +111,13 @@ export default function Navbar() {
             className="text-slate-600 font-medium text-lg py-2 border-b border-slate-100"
           >
             Services
+          </Link>
+          <Link
+            href="#oculoplasty"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-slate-600 font-medium text-lg py-2 border-b border-slate-100"
+          >
+            Oculoplasty
           </Link>
           <Link
             href="#doctor"

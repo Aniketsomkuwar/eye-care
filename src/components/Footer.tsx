@@ -173,7 +173,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#services" className="hover:text-white transition-colors">
+              <Link href="#oculoplasty" className="hover:text-white transition-colors">
                 Oculoplasty &amp; Eyelid Surgery
               </Link>
             </li>
