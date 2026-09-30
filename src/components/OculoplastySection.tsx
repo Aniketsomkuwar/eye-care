@@ -364,10 +364,10 @@ export default function OculoplastySection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             <Link
               href="#book-appointment"
-              className="px-6 py-3.5 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-xs sm:text-sm font-bold rounded-full shadow-[0_4px_15px_rgba(30,91,249,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="px-6 py-3.5 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-xs sm:text-sm font-bold rounded-full shadow-[0_4px_15px_rgba(30,91,249,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Schedule Evaluation</span>
@@ -376,7 +376,7 @@ export default function OculoplastySection() {
               href="https://wa.me/917058236990?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20inquire%20about%20an%20Oculoplasty%20consultation%20at%20Jyoti%20Eye%20Care."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-semibold rounded-full backdrop-blur-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-semibold rounded-full backdrop-blur-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
               <span>Chat on WhatsApp</span>
               <ArrowRight className="w-3.5 h-3.5" />

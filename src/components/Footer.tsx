@@ -251,12 +251,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar: Copyright & Privacy */}
-      <div className="max-w-[1600px] mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div className="max-w-[1600px] mx-auto pt-8 flex flex-col items-center sm:flex-row sm:justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
         <div>
           © 2026 Jyoti Eye Care. All rights reserved. Clinical Director: Dr. Ruchita Sontakke.
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 flex-wrap justify-center">
           <Link href="#about" className="hover:text-slate-300 transition-colors">
             Clinical Standards
           </Link>

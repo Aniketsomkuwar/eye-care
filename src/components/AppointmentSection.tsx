@@ -48,10 +48,8 @@ export default function AppointmentSection() {
           <div>
 
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.12] mb-8">
-              Are you ready to make
-              <br />
-              an appointment?
+            <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.15] mb-8">
+              Are you ready to make an appointment?
             </h2>
 
             {/* Form */}
@@ -187,7 +185,7 @@ export default function AppointmentSection() {
         </div>
 
         {/* Right Side: Bespoke Clinical Consultation Suite & OPD Assurance Stage */}
-        <div className="lg:col-span-5 relative flex flex-col justify-between overflow-hidden min-h-[440px] sm:min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-12 text-white">
+        <div className="lg:col-span-5 relative hidden sm:flex flex-col justify-between overflow-hidden min-h-[440px] sm:min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-12 text-white">
 
           {/* Authentic Clinic Consultation Photo Background */}
           <Image

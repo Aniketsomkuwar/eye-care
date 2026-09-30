@@ -69,7 +69,7 @@ export default function DoctorsSection() {
               <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.15] mb-3">
                 Dr. Ruchita Sontakke
               </h2>
-              <p className="text-base sm:text-lg text-[#1E5BF9] font-bold mb-5 font-heading">
+              <p className="text-sm sm:text-base text-[#1E5BF9] font-bold mb-5 font-heading leading-relaxed">
                 MBBS (IGGMC) • MS Ophthalmology (MAMC, New Delhi) • DNB • Ex-SR MAMC
               </p>
 
@@ -175,10 +175,10 @@ export default function DoctorsSection() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-1">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 pt-1">
               <Link
                 href="#book-appointment"
-                className="px-6 py-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-sm font-semibold rounded-full shadow-[0_4px_15px_rgba(30,91,249,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+                className="px-6 py-3 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-sm font-semibold rounded-full shadow-[0_4px_15px_rgba(30,91,249,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book OPD Consultation</span>
@@ -187,7 +187,7 @@ export default function DoctorsSection() {
                 href="https://wa.me/917058236990?text=Hello%20Dr.%20Ruchita,%20I%20would%20like%20to%20consult%20at%20Jyoti%20Eye%20Care."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-sm font-semibold rounded-full shadow-xs transition-all hover:scale-105 active:scale-95"
+                className="px-5 py-3 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-sm font-semibold rounded-full shadow-xs transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
               >
                 Chat on WhatsApp
               </a>
@@ -197,7 +197,7 @@ export default function DoctorsSection() {
                 rel="noopener noreferrer"
                 aria-label="Dr. Ruchita Sontakke on LinkedIn"
                 title="View LinkedIn Profile"
-                className="px-4 py-3 bg-white hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white border border-slate-200 text-sm font-semibold rounded-full shadow-xs transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+                className="px-4 py-3 bg-white hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white border border-slate-200 text-sm font-semibold rounded-full shadow-xs transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 sm:w-auto"
               >
                 <LinkedInIcon className="w-4 h-4" />
                 <span>LinkedIn</span>

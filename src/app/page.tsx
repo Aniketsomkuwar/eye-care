@@ -15,7 +15,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative flex flex-col justify-start">
+    <main className="min-h-screen relative flex flex-col justify-start overflow-x-hidden">
       {/* Dynamic Scroll Progress Bar (Right Margin) */}
       <ScrollProgress />
 

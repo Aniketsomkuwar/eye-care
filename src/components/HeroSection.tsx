@@ -51,7 +51,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08] font-heading"
+            className="text-3xl sm:text-5xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08] font-heading"
           >
             Innovati<span className="glossy-lens-sphere mx-0.5 inline-block animate-pulse" />n
             <br />
@@ -90,7 +90,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Center Column: Cutout of Dr. Ruchita Sontakke & Interactive Floating Badges */}
-        <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[380px] sm:h-[540px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
+        <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[280px] sm:h-[480px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
 
           {/* Soft luminous aura backdrop on mobile to anchor portrait */}
           <div className="absolute inset-x-6 bottom-0 top-10 bg-gradient-to-t from-blue-600/15 via-blue-500/5 to-transparent rounded-t-[40px] pointer-events-none lg:hidden" />
@@ -100,7 +100,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1.05 }}
             transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-[280px] sm:w-[420px] lg:w-[500px] xl:w-[560px] max-w-full origin-bottom translate-y-1 sm:translate-y-2"
+            className="relative z-10 w-[220px] sm:w-[380px] lg:w-[500px] xl:w-[560px] max-w-full origin-bottom translate-y-1 sm:translate-y-2"
           >
             <Image
               src="/images/dr-ruchita-inner-border.png"

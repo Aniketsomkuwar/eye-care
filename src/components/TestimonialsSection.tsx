@@ -200,13 +200,13 @@ export default function TestimonialsSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="relative z-10 max-w-2xl mx-auto h-[450px]"
+        className="relative z-10 max-w-2xl mx-auto"
       >
         {/* Layered Card Drop Shadow */}
         <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/10 rounded-[36px] sm:rounded-[44px] -rotate-1 transform scale-98 pointer-events-none" />
 
-        {/* Main Card with Fixed Height - Full Content Visible Without Scrollbar */}
-        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col justify-between transition-all h-[450px]">
+        {/* Main Card — auto height so long reviews are fully visible on mobile */}
+        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col transition-all min-h-[300px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -214,20 +214,20 @@ export default function TestimonialsSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -25 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="flex-1 flex flex-col justify-between h-full"
+              className="flex flex-col gap-4"
             >
-              <div className="flex-1 flex flex-col justify-start">
+              <div className="flex flex-col gap-4">
                 {/* Card Top: Patient Info & Rating */}
-                <div className="flex items-start sm:items-center justify-between gap-3 mb-6">
-                  <div className="flex items-center gap-3.5 min-w-0">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
                     <img
                       src={current.avatarUrl}
                       alt={current.name}
-                      className="w-12 h-12 rounded-full object-cover border border-slate-200/80 flex-shrink-0 shadow-xs"
+                      className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border border-slate-200/80 flex-shrink-0 shadow-xs"
                       loading="lazy"
                     />
                     <div className="min-w-0">
-                      <h3 className="text-base sm:text-xl font-bold text-slate-900 font-heading leading-tight truncate">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 font-heading leading-tight truncate">
                         {current.name}
                       </h3>
                       <div className="flex flex-wrap items-center gap-1.5 mt-1">
@@ -235,18 +235,18 @@ export default function TestimonialsSection() {
                           {[...Array(current.rating)].map((_, i) => (
                             <Star
                               key={i}
-                              className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
+                              className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400 text-amber-400"
                             />
                           ))}
                         </div>
-                        <span className="text-[11px] sm:text-xs text-slate-400 font-medium ml-1">
+                        <span className="text-[11px] text-slate-400 font-medium">
                           {current.date}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1E5BF9] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100 flex-shrink-0">
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-[#1E5BF9] bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100 flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-3.5 h-3.5 flex-shrink-0">
                       <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
                       <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
@@ -258,13 +258,13 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Review Quote */}
-                <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal mb-4 sm:mb-5">
+                <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
 
                 {/* Owner Response if present */}
                 {current.ownerResponse && (
-                  <div className="bg-slate-50 border-l-2 border-[#1E5BF9] rounded-r-xl p-3 sm:p-3.5 text-xs sm:text-sm text-slate-600 mb-4">
+                  <div className="bg-slate-50 border-l-2 border-[#1E5BF9] rounded-r-xl p-3 text-xs sm:text-sm text-slate-600">
                     <p className="font-semibold text-slate-900 mb-0.5">Response from the owner</p>
                     <p className="text-slate-600">{current.ownerResponse}</p>
                   </div>
@@ -272,19 +272,19 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Card Bottom: Google Link, Dots & Prev/Next Buttons */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100 flex-shrink-0 mt-2">
+              <div className="flex items-center justify-between pt-4 mt-2 border-t border-slate-100 gap-2 flex-wrap">
                 <a
                   href={current.googleReviewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-bold text-slate-500 hover:text-[#1E5BF9] uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+                  className="text-[11px] font-bold text-slate-500 hover:text-[#1E5BF9] uppercase tracking-wider flex items-center gap-1 transition-colors"
                 >
                   <span>View on Google</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
                 </a>
 
                 {/* Dots */}
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1">
                   {googleReviews.map((_, idx) => (
                     <button
                       key={idx}
@@ -292,7 +292,7 @@ export default function TestimonialsSection() {
                       aria-label={`Go to review ${idx + 1}`}
                       className={`h-2 rounded-full transition-all duration-300 ${
                         idx === currentIndex
-                          ? "w-6 bg-[#1E5BF9]"
+                          ? "w-5 bg-[#1E5BF9]"
                           : "w-2 bg-slate-200 hover:bg-slate-300"
                       }`}
                     />
@@ -304,14 +304,14 @@ export default function TestimonialsSection() {
                   <button
                     onClick={handlePrev}
                     aria-label="Previous Review"
-                    className="w-10 h-10 rounded-full border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
                   >
                     <ArrowLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={handleNext}
                     aria-label="Next Review"
-                    className="w-10 h-10 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </button>
