@@ -37,14 +37,14 @@ export default function HeroSection() {
       <Navbar />
 
       {/* 2. Main Hero Content Grid */}
-      <div className="relative z-10 px-4 sm:px-12 lg:px-20 pt-4 sm:pt-6 lg:pt-8 pb-8 lg:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-1">
+      <div className="relative z-10 px-4 sm:px-12 lg:px-20 pt-2 sm:pt-6 lg:pt-8 pb-4 sm:pb-8 lg:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center flex-1">
 
         {/* Left Column (Headlines & CTA) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center pt-2 lg:pt-4"
+          className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left pt-2 lg:pt-4"
         >
           {/* Title with Glossy 3D Blue Lens in 'o' */}
           <motion.h1
@@ -63,7 +63,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-4 sm:mt-5 text-sm sm:text-lg text-slate-600 max-w-md leading-relaxed"
+            className="mt-4 sm:mt-5 text-sm sm:text-lg text-slate-600 max-w-md leading-relaxed mx-auto lg:mx-0"
           >
             Dedicated to <strong className="text-slate-950 font-bold">advanced microsurgical precision</strong> and{" "}
             <span className="text-slate-600">comprehensive ophthalmic care for every patient.</span>
@@ -74,7 +74,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 sm:mt-8 flex items-center gap-4"
+            className="mt-6 sm:mt-8 flex items-center justify-center lg:justify-start gap-4 w-full"
           >
             <Link
               href="#book-appointment"
@@ -89,8 +89,8 @@ export default function HeroSection() {
 
         </motion.div>
 
-        {/* Center Column: Cutout of Dr. Ruchita Sontakke & Interactive Floating Badges */}
-        <div className="lg:col-span-4 xl:col-span-4 relative flex justify-center items-end self-end h-[280px] sm:h-[480px] lg:h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
+        {/* Center Column: Cutout of Dr. Ruchita Sontakke & Interactive Floating Badges — hidden on mobile */}
+        <div className="hidden lg:flex lg:col-span-4 xl:col-span-4 relative justify-center items-end self-end h-[720px] pointer-events-none -mb-8 lg:-mb-12 mt-4 lg:mt-0">
 
           {/* Soft luminous aura backdrop on mobile to anchor portrait */}
           <div className="absolute inset-x-6 bottom-0 top-10 bg-gradient-to-t from-blue-600/15 via-blue-500/5 to-transparent rounded-t-[40px] pointer-events-none lg:hidden" />
@@ -179,7 +179,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-3 xl:col-span-3 text-white flex flex-col justify-between h-full pt-7 sm:pt-8 lg:pt-14 pb-7 sm:pb-8 lg:pb-4 z-10 px-6 sm:px-8 lg:px-0 lg:pl-6 bg-gradient-to-br from-[#1E5BF9] to-[#1242C2] rounded-[32px] sm:rounded-[36px] lg:bg-none lg:rounded-none shadow-xl lg:shadow-none mt-4 lg:mt-0"
+          className="lg:col-span-3 xl:col-span-3 text-white flex flex-col justify-between items-center lg:items-start text-center lg:text-left h-full pt-7 sm:pt-8 lg:pt-14 pb-7 sm:pb-8 lg:pb-4 z-10 px-6 sm:px-8 lg:px-0 lg:pl-6 bg-gradient-to-br from-[#1E5BF9] to-[#1242C2] rounded-[32px] sm:rounded-[36px] lg:bg-none lg:rounded-none shadow-xl lg:shadow-none mt-4 lg:mt-0"
         >
           <div>
             <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white leading-[1.08] tracking-tight font-heading">
@@ -190,18 +190,18 @@ export default function HeroSection() {
               Technologies
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-sm xl:text-base text-blue-100 max-w-xs leading-relaxed font-normal">
+            <p className="mt-4 sm:mt-5 text-sm xl:text-base text-blue-100 max-w-xs leading-relaxed font-normal mx-auto lg:mx-0">
               The latest <strong className="text-white font-semibold">generation equipment</strong>, digital diagnostics, advanced microsurgical techniques. All dedicated to your vision health.
             </p>
           </div>
 
           {/* Bottom Testimonial & Review Stack */}
-          <div className="mt-8 lg:mt-auto pt-6 lg:pt-8 border-t border-white/15 lg:border-t-0">
+          <div className="mt-8 lg:mt-auto pt-6 lg:pt-8 border-t border-white/15 lg:border-t-0 flex flex-col items-center lg:items-start">
             <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-xs">
               We appreciate <strong className="text-white font-bold">every feedback</strong>, because it inspires us to <strong className="text-white font-bold">become better</strong>.
             </p>
 
-            <div className="mt-4 sm:mt-5 flex items-center gap-4">
+            <div className="mt-4 sm:mt-5 flex items-center justify-center lg:justify-start gap-4">
               <Link
                 href="#patient-reviews"
                 aria-label="Read patient reviews"
@@ -227,7 +227,6 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-
         </motion.div>
 
       </div>

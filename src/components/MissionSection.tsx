@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 export default function MissionSection() {
   return (
-    <section className="px-4 sm:px-8 lg:px-12 my-8 sm:my-14 w-full max-w-[1600px] mx-auto">
-      {/* Large Rounded White Container (Matches haidigi.com Section 2) */}
+    <section className="px-4 sm:px-8 lg:px-12 my-6 sm:my-14 w-full max-w-[1600px] mx-auto">
+      {/* Large Rounded White Container */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-white rounded-[32px] sm:rounded-[44px] py-12 sm:py-24 px-5 sm:px-12 lg:px-20 text-center shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-slate-100"
+        className="bg-white rounded-[28px] sm:rounded-[44px] py-8 sm:py-20 px-4 sm:px-12 lg:px-20 text-center shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-slate-100"
       >
         
         {/* Display Typography with Inline Badges */}
@@ -24,7 +24,7 @@ export default function MissionSection() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto text-2xl sm:text-5xl lg:text-[3.5rem] font-heading font-extrabold tracking-tight leading-[1.3] text-slate-950"
         >
-          We combine innovative{" "}
+          Accessible, ethical{" "}
           <motion.span
             whileHover={{ scale: 1.15, rotate: 10 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -34,17 +34,17 @@ export default function MissionSection() {
             <Lightbulb className="w-4 h-4 sm:w-6 sm:h-6 text-[#1E5BF9]" />
           </motion.span>{" "}
           <span className="text-slate-500 font-bold">
-            technologies with a human approach to make every patient
+            and comprehensive eye care — for every
           </span>{" "}
           <motion.span
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             className="inline-flex items-center justify-center px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-blue-50 text-[#1E5BF9] mx-1 sm:mx-2 align-middle cursor-pointer"
-            aria-label="Medical experts"
+            aria-label="Every patient"
           >
             <Users className="w-4 h-4 sm:w-6 sm:h-6 text-[#1E5BF9]" />
           </motion.span>{" "}
-          feel confident and calm.
+          patient.
         </motion.h2>
 
         {/* Subtext Description */}
@@ -55,7 +55,7 @@ export default function MissionSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="max-w-xl mx-auto mt-6 text-sm sm:text-base text-slate-500 leading-relaxed font-normal"
         >
-          Our clinic is a <strong className="text-slate-800 font-semibold">space of trust</strong>, modern microsurgical precision and ethical care, based on years of surgical experience and dedication to your vision health.
+          At Jyoti Eye Care, our aim is to provide <strong className="text-slate-800 font-semibold">accessible, ethical, and comprehensive eye care</strong> in a comfortable and patient-friendly environment — whether it is a routine eye examination, cataract evaluation, or an oculoplastic concern.
         </motion.p>
 
         {/* Pill Button: More about us */}

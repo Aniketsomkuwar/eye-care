@@ -23,7 +23,7 @@ const InstagramIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 
 export default function DoctorsSection() {
   return (
-    <section id="doctor" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
+    <section id="doctor" className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto">
 
       {/* Top Appointment Pill */}
       <motion.div
@@ -31,7 +31,7 @@ export default function DoctorsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center justify-center mb-10 sm:mb-14"
+        className="flex flex-col items-center justify-center mb-6 sm:mb-14"
       >
         <Link
           href="#book-appointment"
@@ -45,8 +45,8 @@ export default function DoctorsSection() {
       </motion.div>
 
       {/* Main Single Doctor Profile Card */}
-      <div className="bg-white rounded-[32px] sm:rounded-[44px] p-6 sm:p-10 lg:p-14 border border-slate-100 shadow-[0_15px_50px_-10px_rgba(30,91,249,0.08)]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div className="bg-white rounded-[28px] sm:rounded-[44px] p-5 sm:p-10 lg:p-14 border border-slate-100 shadow-[0_15px_50px_-10px_rgba(30,91,249,0.08)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 items-center">
 
           {/* Left Column: Doctor Story & Credentials */}
           <motion.div
@@ -54,14 +54,14 @@ export default function DoctorsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col justify-between"
+            className="lg:col-span-7 flex flex-col justify-between items-center lg:items-start text-center lg:text-left"
           >
-            <div>
+            <div className="w-full flex flex-col items-center lg:items-start">
               {/* Doctor Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100/80 mb-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100/80 mb-5 mx-auto lg:mx-0">
                 <Award className="w-4 h-4 text-[#1E5BF9]" />
                 <span className="text-xs font-bold text-[#1E5BF9] tracking-wider uppercase">
-                  Lead Cataract & Oculoplastic Surgeon
+                  Consultant Ophthalmologist | Cataract &amp; Oculoplastic Surgeon
                 </span>
               </div>
 
@@ -70,33 +70,41 @@ export default function DoctorsSection() {
                 Dr. Ruchita Sontakke
               </h2>
               <p className="text-sm sm:text-base text-[#1E5BF9] font-bold mb-5 font-heading leading-relaxed">
-                MBBS (IGGMC) • MS Ophthalmology (MAMC, New Delhi) • DNB • Ex-SR MAMC
+                MBBS (IGGMC, Nagpur) • MS Ophthalmology (MAMC, New Delhi) • DNB (Delhi) • Ex-SR MAMC
               </p>
 
               {/* Bio Summary */}
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-8">
-                Trained at India&apos;s premier ophthalmic center — <strong>Maulana Azad Medical College (MAMC)</strong> and <strong>Guru Nanak Eye Centre, New Delhi</strong>. Dr. Ruchita completed rigorous surgical residency and senior residency in high-volume micro-incision cataract surgery and reconstructive oculoplasty, bringing world-class surgical precision and ethical patient-first care to Nagpur.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-6 max-w-2xl mx-auto lg:mx-0">
+                Dr. Ruchita Sontakke is a dedicated ophthalmologist and cataract &amp; oculoplastic surgeon committed to providing <strong className="text-slate-800">comprehensive, compassionate, and patient-centred eye care</strong>. She completed her MS in Ophthalmology from the prestigious <strong className="text-slate-800">Maulana Azad Medical College (MAMC), New Delhi</strong>, University of Delhi, followed by Senior Residency at MAMC — bringing world-class surgical training to Nagpur.
               </p>
 
+              {/* Doctor's Quote */}
+              <blockquote className="mb-6 pl-4 border-l-2 border-[#1E5BF9] bg-blue-50/60 rounded-r-2xl py-3 pr-4 max-w-xl mx-auto lg:mx-0 text-left">
+                <p className="text-sm text-slate-700 italic leading-relaxed">
+                  &ldquo;Clear vision begins with the right diagnosis, but exceptional eye care begins with understanding the patient.&rdquo;
+                </p>
+                <cite className="text-xs font-bold text-[#1E5BF9] not-italic mt-1 block">— Dr. Ruchita Sontakke</cite>
+              </blockquote>
+
               {/* Credential Highlights Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-5 sm:mb-8">
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="w-9 h-9 rounded-xl bg-blue-100/70 flex items-center justify-center flex-shrink-0 text-[#1E5BF9]">
+                    <GraduationCap className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">MBBS — IGGMC, Nagpur</h4>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Indira Gandhi Govt. Medical College, Nagpur</p>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
                   <div className="w-9 h-9 rounded-xl bg-blue-100/70 flex items-center justify-center flex-shrink-0 text-[#1E5BF9]">
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">MS Ophthalmology</h4>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Maulana Azad Medical College (MAMC), New Delhi</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
-                  <div className="w-9 h-9 rounded-xl bg-blue-100/70 flex items-center justify-center flex-shrink-0 text-[#1E5BF9]">
-                    <Building2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Ex-Senior Resident</h4>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Guru Nanak Eye Centre & MAMC, New Delhi</p>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Maulana Azad Medical College (MAMC), New Delhi — University of Delhi</p>
                   </div>
                 </div>
 
@@ -105,44 +113,43 @@ export default function DoctorsSection() {
                     <Award className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">DNB Board Certified</h4>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">DNB — Ophthalmology</h4>
                     <p className="text-xs text-slate-500 mt-0.5 leading-snug">National Board of Examinations (NBE), Delhi</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
                   <div className="w-9 h-9 rounded-xl bg-blue-100/70 flex items-center justify-center flex-shrink-0 text-[#1E5BF9]">
-                    <Clock className="w-4 h-4" />
+                    <Building2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">OPD Schedule</h4>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Mon – Sat: 6:30 PM – 9:30 PM (Evening OPD)</p>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Senior Residency</h4>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">Maulana Azad Medical College (MAMC), New Delhi</p>
                   </div>
                 </div>
               </div>
 
-              {/* Specialization Tags */}
-              <div className="flex flex-wrap items-center gap-2 mb-6">
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100/80 px-3 py-1.5 rounded-full">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  Micro-Incision Phacoemulsification
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100/80 px-3 py-1.5 rounded-full">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  Premium Toric & Multifocal IOLs
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100/80 px-3 py-1.5 rounded-full">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  Ptosis & Eyelid Reconstruction
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100/80 px-3 py-1.5 rounded-full">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  Computer Vision & Dry Eye Therapy
-                </span>
+              {/* Specialization Tags — hidden on mobile */}
+              <div className="hidden md:flex flex-wrap items-center gap-2 mb-6">
+                {[
+                  "Cataract Surgery",
+                  "Oculoplastic Procedures",
+                  "Eyelid & Periocular Disorders",
+                  "Glaucoma Screening",
+                  "Diabetic Eye Evaluation",
+                  "Dry Eye & Ocular Surface",
+                  "Pediatric Eye Screening",
+                  "Refractive Error Assessment",
+                ].map((tag) => (
+                  <span key={tag} className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-100/80 px-3 py-1.5 rounded-full">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              {/* Online Patient Education & Instagram Highlight */}
-              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-rose-50/70 via-purple-50/40 to-blue-50/60 border border-rose-100/90 shadow-[0_4px_20px_rgba(225,48,108,0.05)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              {/* Online Patient Education & Instagram Highlight — hidden on mobile */}
+              <div className="hidden md:flex mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-rose-50/70 via-purple-50/40 to-blue-50/60 border border-rose-100/90 shadow-[0_4px_20px_rgba(225,48,108,0.05)] flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-start gap-3.5 min-w-0">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white flex-shrink-0 shadow-md">
                     <InstagramIcon className="w-5 h-5" />
@@ -236,11 +243,11 @@ export default function DoctorsSection() {
                   Dr. Ruchita Sontakke
                 </h3>
                 <p className="text-xs text-blue-200 font-medium mt-1 leading-relaxed">
-                  Founder & Chief Eye Surgeon, Jyoti Eye Care
+                  Consultant Ophthalmologist &amp; Cataract / Oculoplastic Surgeon
                 </p>
                 <div className="mt-3 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/80">
-                  <span>Nagpur, Maharashtra</span>
-                  <span className="text-amber-300 font-semibold">4.7 ★★★★★ (Google Verified)</span>
+                  <span>Jyoti Eye Care, Nagpur</span>
+                  <span className="text-amber-300 font-semibold">4.7 ★ Google Verified</span>
                 </div>
               </div>
             </div>

@@ -126,17 +126,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="patient-reviews" className="relative px-4 sm:px-8 lg:px-12 py-16 sm:py-24 w-full max-w-[1600px] mx-auto overflow-hidden">
-
-      {/* Giant Faint Watermark Text in Background */}
-      <div className="absolute inset-0 flex items-center justify-between pointer-events-none select-none z-0 px-2 sm:px-8 opacity-40">
-        <span className="text-6xl sm:text-8xl lg:text-[11rem] font-extrabold font-heading text-blue-100 tracking-tighter">
-          Review
-        </span>
-        <span className="text-6xl sm:text-8xl lg:text-[11rem] font-extrabold font-heading text-blue-100 tracking-tighter">
-          Patient
-        </span>
-      </div>
+    <section id="patient-reviews" className="relative px-4 sm:px-8 lg:px-12 py-8 sm:py-24 w-full max-w-[1600px] mx-auto overflow-hidden">
 
       {/* Header Bar */}
       <motion.div
@@ -144,13 +134,13 @@ export default function TestimonialsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 flex flex-wrap items-end justify-between gap-6 mb-10 sm:mb-14"
+        className="relative z-10 flex flex-col sm:flex-row items-center sm:items-end justify-between text-center sm:text-left gap-4 sm:gap-6 mb-6 sm:mb-14"
       >
-        <div>
-          <span className="text-xs uppercase font-extrabold tracking-widest text-[#1E5BF9] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100 inline-block mb-3">
+        <div className="flex flex-col items-center sm:items-start">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-[#1E5BF9] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100 inline-block mb-3 mx-auto sm:mx-0">
             Google Maps Reviews
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight leading-tight">
             What our
             <br />
             patients say
@@ -158,7 +148,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Google Rating Overview Badge */}
-        <div className="flex items-center gap-3.5 bg-white px-5 py-3 rounded-2xl border border-slate-200/80 shadow-[0_4px_20px_-5px_rgba(30,91,249,0.06)]">
+        <div className="flex items-center gap-3.5 bg-white px-5 py-3 rounded-2xl border border-slate-200/80 shadow-[0_4px_20px_-5px_rgba(30,91,249,0.06)] mx-auto sm:mx-0">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-7 h-7 flex-shrink-0">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
@@ -194,31 +184,47 @@ export default function TestimonialsSection() {
         </div>
       </motion.div>
 
-      {/* 3D Floating Review Card Carousel */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative z-10 max-w-2xl mx-auto"
-      >
-        {/* Layered Card Drop Shadow */}
-        <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/10 rounded-[36px] sm:rounded-[44px] -rotate-1 transform scale-98 pointer-events-none" />
+      {/* Carousel Area with Vertically Centered Watermark Behind It */}
+      <div className="relative w-full">
 
-        {/* Main Card — auto height so long reviews are fully visible on mobile */}
-        <div className="relative bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 border border-slate-100 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.15)] flex flex-col transition-all min-h-[300px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current.id}
-              initial={{ opacity: 0, x: 25 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -25 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="flex flex-col gap-4"
-            >
-              <div className="flex flex-col gap-4">
+        {/* Giant Watermark Text — Exactly vertically centered to the carousel card */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between pointer-events-none select-none z-0 px-2 sm:px-6 lg:px-10 overflow-hidden">
+          <span className="text-[4rem] sm:text-8xl lg:text-[12rem] font-extrabold font-heading text-blue-200/90 tracking-tighter opacity-80 leading-none">
+            Review
+          </span>
+          <span className="text-[4rem] sm:text-8xl lg:text-[12rem] font-extrabold font-heading text-blue-200/90 tracking-tighter opacity-80 leading-none pr-4 sm:pr-8">
+            Patient
+          </span>
+        </div>
+
+        {/* 3D Floating Review Card Carousel */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 max-w-2xl mx-auto h-[460px] sm:h-[410px]"
+        >
+          {/* Layered Card Drop Shadow */}
+          <div className="absolute -inset-2 sm:-inset-3 bg-[#1E5BF9]/12 rounded-[36px] sm:rounded-[44px] -rotate-1 transform scale-98 pointer-events-none blur-[2px]" />
+
+          {/* Main Card — Translucent frosted glass so the watermark shows through softly */}
+          <div className="relative bg-white/80 sm:bg-white/75 backdrop-blur-xl rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 border border-white/90 shadow-[0_25px_60px_-15px_rgba(30,91,249,0.14)] flex flex-col justify-between h-[460px] sm:h-[410px]">
+          
+          {/* Animated Review Body Container */}
+          <div className="flex-1 relative overflow-hidden pb-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.id}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="h-full flex flex-col justify-start overflow-y-auto pr-1"
+                style={{ scrollbarWidth: "none" }}
+              >
                 {/* Card Top: Patient Info & Rating */}
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-3 mb-4 flex-shrink-0">
                   <div className="flex items-center gap-3 min-w-0">
                     <img
                       src={current.avatarUrl}
@@ -258,69 +264,71 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Review Quote */}
-                <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal mb-3">
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
 
                 {/* Owner Response if present */}
                 {current.ownerResponse && (
-                  <div className="bg-slate-50 border-l-2 border-[#1E5BF9] rounded-r-xl p-3 text-xs sm:text-sm text-slate-600">
+                  <div className="bg-slate-50 border-l-2 border-[#1E5BF9] rounded-r-xl p-3 text-xs sm:text-sm text-slate-600 mt-auto">
                     <p className="font-semibold text-slate-900 mb-0.5">Response from the owner</p>
                     <p className="text-slate-600">{current.ownerResponse}</p>
                   </div>
                 )}
-              </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-              {/* Card Bottom: Google Link, Dots & Prev/Next Buttons */}
-              <div className="flex items-center justify-between pt-4 mt-2 border-t border-slate-100 gap-2 flex-wrap">
-                <a
-                  href={current.googleReviewUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] font-bold text-slate-500 hover:text-[#1E5BF9] uppercase tracking-wider flex items-center gap-1 transition-colors"
-                >
-                  <span>View on Google</span>
-                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                </a>
+          {/* Stationary Card Bottom Bar: Controls are cleanly separated, never animate or get clipped */}
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 gap-2 flex-wrap flex-shrink-0">
+            <a
+              href={current.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-bold text-slate-500 hover:text-[#1E5BF9] uppercase tracking-wider flex items-center gap-1 transition-colors"
+            >
+              <span>View on Google</span>
+              <ExternalLink className="w-3 h-3 flex-shrink-0" />
+            </a>
 
-                {/* Dots */}
-                <div className="flex items-center gap-1">
-                  {googleReviews.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentIndex(idx)}
-                      aria-label={`Go to review ${idx + 1}`}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        idx === currentIndex
-                          ? "w-5 bg-[#1E5BF9]"
-                          : "w-2 bg-slate-200 hover:bg-slate-300"
-                      }`}
-                    />
-                  ))}
-                </div>
+            {/* Dots Indicator */}
+            <div className="flex items-center gap-1.5">
+              {googleReviews.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  aria-label={`Go to review ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === currentIndex
+                      ? "w-6 bg-[#1E5BF9]"
+                      : "w-2 bg-slate-200 hover:bg-slate-300"
+                  }`}
+                />
+              ))}
+            </div>
 
-                {/* Prev & Next Controls */}
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={handlePrev}
-                    aria-label="Previous Review"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    aria-label="Next Review"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_15px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+            {/* Prev & Next Controls with Unclipped Shadows & Paddings */}
+            <div className="flex items-center gap-2.5 py-1">
+              <button
+                onClick={handlePrev}
+                aria-label="Previous Review"
+                className="w-10 h-10 rounded-full border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleNext}
+                aria-label="Next Review"
+                className="w-10 h-10 rounded-full bg-[#1E5BF9] hover:bg-[#1647C9] text-white flex items-center justify-center transition-all shadow-[0_4px_14px_rgba(30,91,249,0.35)] hover:scale-105 active:scale-95"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
         </div>
       </motion.div>
+    </div>
 
     </section>
   );

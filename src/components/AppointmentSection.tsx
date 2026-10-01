@@ -31,24 +31,24 @@ export default function AppointmentSection() {
   return (
     <section
       id="book-appointment"
-      className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto"
+      className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto"
     >
-      {/* Big Split Appointment Card (Matches haidigi.com) */}
+      {/* Big Split Appointment Card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] grid grid-cols-1 lg:grid-cols-12"
+        className="rounded-[28px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] grid grid-cols-1 lg:grid-cols-12"
       >
 
         {/* Left Side: Booking Form */}
-        <div className="lg:col-span-7 p-6 sm:p-12 lg:p-16 flex flex-col justify-between">
+        <div className="lg:col-span-7 p-5 sm:p-12 lg:p-16 flex flex-col justify-between">
 
           <div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.15] mb-8">
+            <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 font-heading tracking-tight leading-[1.15] mb-5 sm:mb-8 text-center sm:text-left">
               Are you ready to make an appointment?
             </h2>
 
@@ -70,7 +70,7 @@ export default function AppointmentSection() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
+              <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto sm:mx-0">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name Input */}
                   <div>
@@ -187,10 +187,10 @@ export default function AppointmentSection() {
         {/* Right Side: Bespoke Clinical Consultation Suite & OPD Assurance Stage */}
         <div className="lg:col-span-5 relative hidden sm:flex flex-col justify-between overflow-hidden min-h-[440px] sm:min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-12 text-white">
 
-          {/* Authentic Clinic Consultation Photo Background */}
+          {/* Real Slit-Lamp Consultation Photo */}
           <Image
-            src="/images/clinic-consultation.jpg"
-            alt="Dr. Ruchita Sontakke in clinic consultation at Jyoti Eye Care"
+            src="/images/dr-ruchita-slitlamp.jpg"
+            alt="Dr. Ruchita Sontakke examining a patient at Jyoti Eye Care slit-lamp"
             fill
             sizes="(max-width: 1024px) 100vw, 42vw"
             className="object-cover object-center"

@@ -74,35 +74,32 @@ const cardVariants: Variants = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
+    <section id="services" className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto">
 
-      {/* Section Header (Matches haidigi.com) */}
+      {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14"
+        className="flex flex-col lg:flex-row lg:items-end justify-between items-center lg:items-end text-center lg:text-left gap-4 sm:gap-6 mb-6 sm:mb-14"
       >
-        {/* Left: Heading with Pill Badge */}
-        <div>
-          <div className="flex items-center gap-3">
-            <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight">
-              Our medical
-              <br className="hidden sm:inline" /> services
-            </h2>
-
-          </div>
+        {/* Left: Heading */}
+        <div className="flex flex-col items-center lg:items-start">
+          <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 font-heading tracking-tight leading-tight">
+            Our medical
+            <br className="hidden sm:inline" /> services
+          </h2>
         </div>
 
         {/* Right: Subtitle & See All Services Link */}
-        <div className="lg:max-w-md flex flex-col items-start lg:items-end text-left lg:text-right">
+        <div className="lg:max-w-md flex flex-col items-center lg:items-end text-center lg:text-right">
           <p className="text-sm sm:text-base text-slate-500 leading-relaxed font-normal">
             We provide a full range of ophthalmic services, from precision diagnostic consultations to advanced microsurgical procedures.
           </p>
           <Link
             href="#book-appointment"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#1E5BF9] hover:text-[#1647C9] mt-3 transition-colors"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#1E5BF9] hover:text-[#1647C9] mt-2 sm:mt-3 transition-colors"
           >
             <span>See all services</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -116,7 +113,7 @@ export default function ServicesSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
       >
 
         {/* Top 4 Cards (01 to 04) */}
@@ -125,7 +122,7 @@ export default function ServicesSection() {
             key={service.number}
             variants={cardVariants}
             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-            className="group relative bg-white hover:bg-[#FAFBFD] rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 border border-slate-200/70 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.06)] transition-all flex flex-col justify-between min-h-[260px]"
+            className="group relative bg-white hover:bg-[#FAFBFD] rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 border border-slate-200/70 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.06)] transition-all flex flex-col justify-between min-h-[220px] sm:min-h-[260px]"
           >
             {/* Top Number & Optional Badge */}
             <div className="flex items-start justify-between">
@@ -207,8 +204,8 @@ export default function ServicesSection() {
           className="sm:col-span-2 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[260px] shadow-[0_10px_35px_rgba(0,0,0,0.06)] group border border-slate-200/80"
         >
           <Image
-            src="/images/doctor-ot-surgery.jpg"
-            alt="Dr. Ruchita Sontakke performing microsurgery in the operating theatre"
+            src="/images/carl-zeiss-ot.jpg"
+            alt="Carl Zeiss OPMI LUMERA surgical microscope in ophthalmology operating theatre at Jyoti Eye Care"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

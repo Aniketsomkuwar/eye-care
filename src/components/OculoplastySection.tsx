@@ -147,10 +147,10 @@ export default function OculoplastySection() {
   return (
     <section
       id="oculoplasty"
-      className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto"
+      className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto"
     >
       {/* Outer Card Wrapper with Subtle Modern Border & Shadow */}
-      <div className="bg-gradient-to-b from-[#F9FBFF] via-white to-[#F8FAFC] rounded-[32px] sm:rounded-[44px] p-6 sm:p-10 lg:p-14 border border-blue-100/70 shadow-[0_20px_60px_-15px_rgba(30,91,249,0.07)]">
+      <div className="bg-gradient-to-b from-[#F9FBFF] via-white to-[#F8FAFC] rounded-[28px] sm:rounded-[44px] p-5 sm:p-10 lg:p-14 border border-blue-100/70 shadow-[0_20px_60px_-15px_rgba(30,91,249,0.07)]">
 
         {/* Section Header */}
         <motion.div
@@ -158,11 +158,11 @@ export default function OculoplastySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16"
+          className="flex flex-col lg:flex-row lg:items-end justify-between items-center lg:items-end text-center lg:text-left gap-4 sm:gap-6 mb-6 sm:mb-14"
         >
-          <div className="max-w-3xl">
+          <div className="max-w-3xl flex flex-col items-center lg:items-start">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-4 mx-auto lg:mx-0">
               <ShieldCheck className="w-4 h-4 text-[#1E5BF9]" />
               <span className="text-xs font-bold text-[#1E5BF9] tracking-wider uppercase">
                 Apex Sub-Specialty • Ex-SR MAMC New Delhi
@@ -175,12 +175,12 @@ export default function OculoplastySection() {
               <span className="text-[#1E5BF9]">Eyelid Aesthetics</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-4">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-4 text-center lg:text-left">
               Combining the delicate precision of ophthalmic surgery with facial aesthetic balance. Led by <strong>Dr. Ruchita Sontakke</strong> (Ex-Senior Resident at Maulana Azad Medical College &amp; Guru Nanak Eye Centre, New Delhi), providing comprehensive care for droopy eyelids, watery tear ducts, and cosmetic periocular rejuvenation in Nagpur.
             </p>
           </div>
 
-          <div className="flex-shrink-0 flex items-center gap-3">
+          <div className="flex-shrink-0 flex items-center justify-center gap-3">
             <Link
               href="#book-appointment"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#1E5BF9] hover:bg-[#1647C9] text-white text-sm font-semibold rounded-full shadow-[0_4px_15px_rgba(30,91,249,0.3)] transition-all hover:scale-105 active:scale-95"
@@ -197,7 +197,7 @@ export default function OculoplastySection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-12 sm:mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-16"
         >
           {treatments.map((treatment) => {
             const Icon = treatment.icon;
@@ -206,7 +206,7 @@ export default function OculoplastySection() {
                 key={treatment.id}
                 variants={cardVariants}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="group relative bg-white rounded-[28px] p-6 sm:p-7 border border-slate-200/80 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.08)] transition-all flex flex-col justify-between"
+                className="group relative bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-7 border border-slate-200/80 hover:border-blue-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(30,91,249,0.08)] transition-all flex flex-col justify-between"
               >
                 <div>
                   {/* Top Icon & Badge */}
@@ -265,9 +265,9 @@ export default function OculoplastySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 border border-slate-200/80 shadow-xs mb-12 sm:mb-16"
+          className="bg-white rounded-[24px] sm:rounded-[36px] p-5 sm:p-8 border border-slate-200/80 shadow-xs mb-6 sm:mb-16"
         >
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100 mb-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6 pb-4 sm:pb-6 border-b border-slate-100 mb-4 sm:mb-6">
             <div className="flex items-start sm:items-center gap-3.5">
               <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0 border border-amber-100">
                 <AlertCircle className="w-5 h-5" />

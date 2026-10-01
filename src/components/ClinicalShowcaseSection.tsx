@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Sparkles,
   Activity,
+  Layers,
   Maximize2,
   X,
   ExternalLink,
@@ -93,6 +94,28 @@ const showcaseItems: ShowcaseItem[] = [
     icon: Award,
     aspectClass: "aspect-[9/16]",
   },
+  {
+    id: "ptosis-child-case",
+    title: "Congenital Ptosis in Child — Frontalis Sling Surgery",
+    category: "Paediatric Oculoplasty",
+    tag: "Before & After",
+    description:
+      "Congenital severe ptosis with severe MJWP corrected via LPS excision with frontalis sling suspension — restoring complete eyelid elevation and symmetry in a paediatric patient.",
+    image: "/images/surgical-case-ptosis-child.jpg",
+    icon: Eye,
+    aspectClass: "aspect-[9/16]",
+  },
+  {
+    id: "lid-mass-biopsy-case",
+    title: "Lid Mass Excision Biopsy",
+    category: "Lid Mass & Biopsy",
+    tag: "Before & After",
+    description:
+      "Complete excision of upper eyelid lid mass with concurrent biopsy for histopathological analysis — full eyelid margin preservation and smooth post-operative healing.",
+    image: "/images/surgical-case-lid-mass-biopsy.jpg",
+    icon: Layers,
+    aspectClass: "aspect-[9/16]",
+  },
 ];
 
 export default function ClinicalShowcaseSection() {
@@ -103,17 +126,17 @@ export default function ClinicalShowcaseSection() {
   } | null>(null);
 
   return (
-    <section className="px-4 sm:px-8 lg:px-12 my-12 sm:my-24 w-full max-w-[1600px] mx-auto">
+    <section className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16"
+        className="flex flex-col lg:flex-row lg:items-end justify-between items-center lg:items-end text-center lg:text-left gap-4 sm:gap-6 mb-6 sm:mb-14"
       >
-        <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-4">
+        <div className="flex flex-col items-center lg:items-start">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-4 mx-auto lg:mx-0">
             <Eye className="w-4 h-4 text-[#1E5BF9]" />
             <span className="text-xs font-bold text-[#1E5BF9] tracking-wider uppercase">
               Documented Clinical Evidence
@@ -125,13 +148,99 @@ export default function ClinicalShowcaseSection() {
           </h2>
         </div>
 
-        <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed font-normal">
+        <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed font-normal text-center lg:text-right">
           Authentic clinical cases and documented patient recoveries performed by <strong>Dr. Ruchita Sontakke</strong> — showcasing ptosis repair, eyelid tumor excision, trauma reconstruction, and ocular cosmesis.
         </p>
       </motion.div>
 
-      {/* Grid of Real Evidence Cards (Full Image Visibility) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {/* ── MOBILE: swipe carousel ─────────────────────────────────────── */}
+      <div className="md:hidden -mx-4">
+        {/* Snap scroll track */}
+        <div
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-4 scrollbar-hide"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {showcaseItems.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.id}
+                className="snap-center flex-shrink-0 w-[82vw] max-w-[340px] rounded-[24px] overflow-hidden bg-white border border-slate-200/80 shadow-[0_10px_35px_rgba(0,0,0,0.06)] flex flex-col"
+              >
+                {/* Photo */}
+                <div
+                  onClick={() =>
+                    setSelectedImage({
+                      src: item.image,
+                      title: item.title,
+                      category: item.category,
+                    })
+                  }
+                  className="relative w-full aspect-[9/16] max-h-[420px] bg-slate-950 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="85vw"
+                    className="object-contain w-full h-full"
+                    priority={index < 2}
+                  />
+                  {/* Badges */}
+                  <div className="absolute top-3 left-3 z-10 flex flex-wrap items-center gap-1.5">
+                    <span className="inline-flex items-center gap-1 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-wide shadow-sm border border-slate-100">
+                      <Icon className="w-3 h-3 text-[#1E5BF9]" />
+                      {item.category}
+                    </span>
+                    <span className="bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-1 rounded-full">
+                      {item.tag}
+                    </span>
+                  </div>
+                  {/* Tap to expand */}
+                  <div className="absolute bottom-3 right-3 z-10 bg-black/70 text-white text-[10px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <Maximize2 className="w-3 h-3" />
+                    <span>Tap to expand</span>
+                  </div>
+                  {/* Counter badge */}
+                  <div className="absolute top-3 right-3 z-10 bg-black/60 text-white text-[10px] font-bold px-2 py-1 rounded-full">
+                    {index + 1}/{showcaseItems.length}
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="p-4 bg-white flex flex-col flex-1">
+                  <h3 className="text-sm font-bold text-slate-950 font-heading leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1.5 leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+                  <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+                    <span className="text-slate-400 text-[10px]">Jyoti Eye Care Archive</span>
+                    <Link
+                      href="#book-appointment"
+                      className="inline-flex items-center gap-1 text-[#1E5BF9]"
+                    >
+                      <span>Consult Dr. Ruchita</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Swipe hint */}
+        <p className="text-center text-xs text-slate-400 font-medium mt-2 pb-2 flex items-center justify-center gap-1.5">
+          <span>←</span>
+          <span>Swipe to browse all {showcaseItems.length} cases</span>
+          <span>→</span>
+        </p>
+      </div>
+
+      {/* ── DESKTOP: 3-col grid ───────────────────────────────────────── */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {showcaseItems.map((item, index) => {
           const Icon = item.icon;
           return (
@@ -148,7 +257,7 @@ export default function ClinicalShowcaseSection() {
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group relative rounded-[28px] sm:rounded-[36px] overflow-hidden bg-white border border-slate-200/80 shadow-[0_10px_35px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(30,91,249,0.1)] transition-all flex flex-col justify-between"
             >
-              {/* Photo Stage: Clean Dark Stage with object-contain so 100% of the image is visible */}
+              {/* Photo Stage */}
               <div
                 onClick={() =>
                   setSelectedImage({
@@ -163,11 +272,10 @@ export default function ClinicalShowcaseSection() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 1200px) 50vw, 33vw"
                   className="object-contain w-full h-full group-hover/img:scale-[1.02] transition-transform duration-500"
                   priority={index < 2}
                 />
-
                 {/* Floating Badges */}
                 <div className="absolute top-4 left-4 z-10 flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-wide shadow-sm border border-slate-100">
@@ -178,8 +286,7 @@ export default function ClinicalShowcaseSection() {
                     {item.tag}
                   </span>
                 </div>
-
-                {/* Interactive Click-to-Zoom Cue */}
+                {/* Click to expand */}
                 <div className="absolute bottom-3 right-3 z-10 opacity-80 group-hover/img:opacity-100 transition-opacity bg-black/75 backdrop-blur-xs text-white text-[11px] font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
                   <Maximize2 className="w-3.5 h-3.5" />
                   <span>Click to expand</span>
@@ -196,7 +303,6 @@ export default function ClinicalShowcaseSection() {
                     {item.description}
                   </p>
                 </div>
-
                 <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
                   <span className="text-slate-400 text-[11px]">Jyoti Eye Care Archive</span>
                   <Link

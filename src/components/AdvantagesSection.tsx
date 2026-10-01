@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2, Heart, MapPin } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -42,7 +42,7 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export default function AdvantagesSection() {
   return (
-    <section id="about" className="px-4 sm:px-8 lg:px-12 my-12 sm:my-20 w-full max-w-[1600px] mx-auto">
+    <section id="about" className="px-4 sm:px-8 lg:px-12 my-6 sm:my-20 w-full max-w-[1600px] mx-auto">
 
       {/* Split Advantages Card Container (Matches haidigi.com Section 4) */}
       <motion.div
@@ -50,88 +50,79 @@ export default function AdvantagesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="rounded-[32px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_15px_50px_rgba(0,0,0,0.03)] grid grid-cols-1 lg:grid-cols-12"
+        className="rounded-[28px] sm:rounded-[44px] overflow-hidden bg-white border border-slate-200/70 shadow-[0_15px_50px_rgba(0,0,0,0.03)] grid grid-cols-1 lg:grid-cols-12"
       >
 
-        {/* Left Side: Vibrant Royal Blue Panel with Doctor & Floating Tags */}
-        <div className="lg:col-span-5 bg-[#1E5BF9] text-white p-6 sm:p-12 lg:p-14 pb-0 sm:pb-0 lg:pb-0 relative flex flex-col justify-between overflow-hidden min-h-[480px] sm:min-h-[580px] lg:min-h-[680px]">
+        {/* Left Side: Real Clinical Photo Background - Rural Eye Camp */}
+        <div className="lg:col-span-5 relative text-white overflow-hidden min-h-[340px] sm:min-h-[520px] lg:min-h-[680px]">
 
-          {/* Subtle Ambient Radial Light */}
-          <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
+          {/* Real Photo: Dr. Ruchita at rural eye camp outreach */}
+          <Image
+            src="/images/dr-ruchita-eye-camp.jpg"
+            alt="Dr. Ruchita Sontakke conducting free rural eye camp outreach in Maharashtra"
+            fill
+            sizes="(max-width: 1024px) 100vw, 42vw"
+            className="object-cover object-center"
+            priority
+          />
 
-          {/* Top Heading & Badge */}
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.08]">
-              Why
-              <br />
-              choose us
-            </h2>
+          {/* Subtle ambient radial light */}
+          <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl pointer-events-none" />
 
-            <div className="mt-4 inline-flex items-center gap-1.5 bg-white/15 border border-white/25 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase text-blue-50">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" />
-              <span>PROVIDED BY: LICENSED MEDICAL EXPERTS</span>
+          {/* Content over photo */}
+          <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-12 lg:p-14">
+
+            {/* Top: Heading & Badge */}
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.08]">
+                Why
+                <br />
+                choose us
+              </h2>
+
+              <div className="mt-4 inline-flex items-center gap-1.5 bg-white/15 border border-white/25 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase text-blue-50">
+                <ShieldCheck className="w-3.5 h-3.5 text-white" />
+                <span>PROVIDED BY: LICENSED MEDICAL EXPERTS</span>
+              </div>
             </div>
-          </div>
 
-          {/* Bottom Doctor Cutout & Floating Tags: Takes full presence anchored to bottom */}
-          <div className="relative z-10 mt-auto flex justify-center items-end self-end w-full">
-
-            {/* Cutout Image of Dr. Ruchita */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-[300px] sm:w-[420px] lg:w-[460px] xl:w-[490px] max-w-full origin-bottom translate-y-1"
-            >
-              <Image
-                src="/images/dr-ruchita-inner-border.png"
-                alt="Dr. Ruchita Sontakke, Chief Eye Surgeon"
-                width={560}
-                height={780}
-                priority
-                className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
-              />
-            </motion.div>
-
-            {/* Floating Tag 1: • MAMC Pedigree */}
-            <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-2 sm:left-2 top-[30%] pointer-events-auto z-20"
-            >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-                MAMC Pedigree
+            {/* Bottom: Community outreach callout + floating tags */}
+            <div className="mt-auto">
+              {/* Floating trust pills */}
+              <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
+                <span className="bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-[11px] font-bold text-white border border-white/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                  MAMC Pedigree
+                </span>
+                <span className="bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-[11px] font-bold text-white border border-white/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  Certified Clinic
+                </span>
+                <span className="bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full text-[11px] font-bold text-white border border-white/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-300" />
+                  Modern Equipment
+                </span>
               </div>
-            </motion.div>
 
-            {/* Floating Tag 2: • Certified Clinic */}
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute left-2 sm:left-0 bottom-[14%] pointer-events-auto z-20"
-            >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-                Certified Clinic
+              {/* Community outreach card — hidden on mobile */}
+              <div className="hidden sm:flex bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 items-start gap-3">
+                <div className="w-9 h-9 rounded-xl bg-amber-400/20 border border-amber-300/30 flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-4 h-4 text-amber-300" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-white">Free Rural Eye Camp Outreach</p>
+                  <p className="text-[11px] text-blue-100 mt-0.5 leading-relaxed">
+                    Dr. Ruchita regularly conducts free eye screenings in rural Maharashtra — bringing expert ophthalmic care to those without access.
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-[10px] text-amber-300 font-semibold mt-1.5">
+                    <MapPin className="w-3 h-3" />
+                    Rural Maharashtra Outreach
+                  </span>
+                </div>
               </div>
-            </motion.div>
-
-            {/* Floating Tag 3: • Modern Equipment */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute right-2 sm:right-2 top-[44%] pointer-events-auto z-20"
-            >
-              <div className="bg-white/95 backdrop-blur-md px-3 sm:px-3.5 py-1.5 rounded-full shadow-lg border border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-900 flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
-                Modern Equipment
-              </div>
-            </motion.div>
+            </div>
 
           </div>
-
         </div>
 
         {/* Right Side: Clean White Background with 2x2 Stats Grid */}
@@ -139,7 +130,7 @@ export default function AdvantagesSection() {
 
 
           {/* 2x2 Statistics Grid with Animated Counters */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 text-center sm:text-left">
 
             {/* Stat 1 */}
             <motion.div
@@ -216,7 +207,7 @@ export default function AdvantagesSection() {
           </div>
 
           {/* Bottom Trust Guarantee Strip */}
-          <div className="mt-10 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-6 text-xs text-slate-500">
+          <div className="mt-10 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-xs text-slate-500">
             <span className="flex items-center gap-2 font-medium">
               <CheckCircle2 className="w-4 h-4 text-[#1E5BF9]" />
               Evidence-based medicine
@@ -241,7 +232,7 @@ export default function AdvantagesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-16 sm:mt-24 text-center px-4"
+        className="mt-8 sm:mt-24 text-center px-4"
       >
         <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-tight text-slate-950 max-w-4xl mx-auto">
           Medicine <span className="text-slate-400 font-bold">starts with</span> science,{" "}
