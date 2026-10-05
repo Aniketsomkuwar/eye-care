@@ -51,11 +51,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08] font-heading"
+            className="text-3xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-slate-950 tracking-tight leading-[1.12] font-heading"
           >
-            Innovati<span className="glossy-lens-sphere mx-0.5 inline-block animate-pulse" />n
+            Precision Eye Care,
             <br />
-            Clinic
+            Restoring Sight,
+            <br />
+            <span className="text-[#1E5BF9]">Inspiring Trust</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -63,10 +65,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-4 sm:mt-5 text-sm sm:text-lg text-slate-600 max-w-md leading-relaxed mx-auto lg:mx-0"
+            className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-600 max-w-lg leading-relaxed mx-auto lg:mx-0"
           >
-            Dedicated to <strong className="text-slate-950 font-bold">advanced microsurgical precision</strong> and{" "}
-            <span className="text-slate-600">comprehensive ophthalmic care for every patient.</span>
+            Combining <strong className="text-slate-950 font-bold">surgical mastery</strong> with personalized, gentle care to protect and renew your eyes at every stage.
           </motion.p>
 
           {/* Find Doctor / Book Visit CTA Pill */}
