@@ -140,13 +140,13 @@ export default function AdvantagesSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                <Counter value={6} suffix="+" />
+                <Counter value={175} suffix="+" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
-                Years of surgical experience
+                Surgeries in last 1 year
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
-                Dedicated ophthalmic clinical practice and surgical residency at MAMC New Delhi, elevating diagnostic precision and surgical outcomes.
+                Documented clinical volume: 136+ micro-incision cataracts, 18+ oculoplasty &amp; eyelid surgeries, and 20+ corneal &amp; trauma repairs.
               </p>
             </motion.div>
 
@@ -158,13 +158,13 @@ export default function AdvantagesSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className="text-5xl sm:text-6xl font-extrabold text-[#1E5BF9] font-heading tracking-tight leading-none">
-                <Counter value={6} suffix="+" />
+                <Counter value={136} suffix="+" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mt-3">
-                Sub-Specialty domains
+                Cataracts completed
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
-                From micro-incision cataract surgery to functional oculoplasty, dry eye tear rehabilitation, and pediatric eye screenings.
+                State-of-the-art sutureless phacoemulsification with premium monofocal, toric, and multifocal intraocular lens (IOL) implantations.
               </p>
             </motion.div>
 

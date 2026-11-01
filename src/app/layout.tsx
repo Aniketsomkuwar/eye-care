@@ -74,11 +74,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: [{ url: "/icon.svg" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/site.webmanifest",
 };
 
 const jsonLd = {
@@ -154,7 +159,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[#EEF2F6] text-slate-900 font-sans selection:bg-[#1E5BF9] selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="min-h-screen bg-[#EEF2F6] text-slate-900 font-sans selection:bg-[#1E5BF9] selection:text-white"
+      >
         {children}
       </body>
     </html>

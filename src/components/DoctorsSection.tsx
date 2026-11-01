@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { UserPlus, Award, GraduationCap, Building2, CheckCircle2, Clock, Calendar } from "lucide-react";
+import { UserPlus, Award, GraduationCap, Building2, CheckCircle2, Clock, Calendar, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
@@ -125,6 +125,79 @@ export default function DoctorsSection() {
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Senior Residency</h4>
                     <p className="text-xs text-slate-500 mt-0.5 leading-snug">Maulana Azad Medical College (MAMC), New Delhi</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Annual Surgical Volume & Clinical Log (12-Month Verified Milestone) */}
+              <div className="w-full mb-6 p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-50/80 via-white to-slate-50 border border-blue-100/80 shadow-[0_4px_20px_rgba(30,91,249,0.06)]">
+                <div className="flex items-center justify-between gap-3 mb-3.5 pb-3 border-b border-blue-100/70">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-[#1E5BF9] text-white flex items-center justify-center shadow-sm">
+                      <Activity className="w-4 h-4" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-950 uppercase tracking-wider font-heading">
+                        Annual Surgical Volume
+                      </h4>
+                      <p className="text-[11px] text-slate-500 font-medium">
+                        Documented Clinical Case Log — Past 1 Year
+                      </p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#1E5BF9] bg-blue-100/80 px-2.5 py-1 rounded-full whitespace-nowrap">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#1E5BF9]" />
+                    175+ Surgeries
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+                  <div className="p-3 rounded-xl bg-white border border-blue-100/70 shadow-xs">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#1E5BF9] font-heading leading-tight">
+                      136+
+                    </div>
+                    <div className="text-xs font-bold text-slate-900 mt-1 leading-tight">
+                      Cataract Surgeries
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">
+                      Micro-incision Phaco
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-white border border-blue-100/70 shadow-xs">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#1E5BF9] font-heading leading-tight">
+                      18+
+                    </div>
+                    <div className="text-xs font-bold text-slate-900 mt-1 leading-tight">
+                      Oculoplasty &amp; Lids
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">
+                      Ptosis, DCR/DCT, Cysts
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-white border border-blue-100/70 shadow-xs">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#1E5BF9] font-heading leading-tight">
+                      20+
+                    </div>
+                    <div className="text-xs font-bold text-slate-900 mt-1 leading-tight">
+                      Trauma &amp; Repairs
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">
+                      Corneal Tears, Iris Repair
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-blue-600 to-[#1E5BF9] text-white shadow-xs">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading leading-tight">
+                      175+
+                    </div>
+                    <div className="text-xs font-bold text-white mt-1 leading-tight">
+                      Total Surgeries
+                    </div>
+                    <div className="text-[10px] text-blue-100 font-medium mt-0.5">
+                      Past 12 Months
+                    </div>
                   </div>
                 </div>
               </div>
