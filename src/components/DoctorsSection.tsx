@@ -200,6 +200,13 @@ export default function DoctorsSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* Data Source Attribution */}
+                <div className="mt-3.5 pt-3 border-t border-blue-100/70 flex items-center justify-center sm:justify-start gap-1.5 text-center sm:text-left">
+                  <span className="text-[11px] text-slate-500 font-medium">
+                    * These figures are taken from <strong className="text-slate-700 font-semibold">IGGMC (Indira Gandhi Govt. Medical College) medical records</strong>.
+                  </span>
+                </div>
               </div>
 
               {/* Specialization Tags — hidden on mobile */}

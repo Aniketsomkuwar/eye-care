@@ -146,7 +146,7 @@ export default function AdvantagesSection() {
                 Surgeries in last 1 year
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
-                Documented clinical volume: 136+ micro-incision cataracts, 18+ oculoplasty &amp; eyelid surgeries, and 20+ corneal &amp; trauma repairs.
+                Documented clinical volume: 136+ micro-incision cataracts, 18+ oculoplasty &amp; eyelid surgeries, and 20+ corneal &amp; trauma repairs (source: IGGMC medical records).
               </p>
             </motion.div>
 
